@@ -1,0 +1,39 @@
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" routerLink="/inicio">
+				<img src="assets/img/mascFeliz-logo.png" alt="Mascota Feliz Logo" class="d-inline-block align-text-top">
+			</a>
+			<a id="logo-text" routerLink="/inicio">Mascota feliz</a>
+			<button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" routerLink="#">Usuarios</a>
+					<a class="nav-link" routerLink="#">Servicios</a>
+					<a class="nav-link" routerLink="#">Solicitudes</a>
+					<a class="nav-link" routerLink="#">Informes</a>
+
+					<div class="dropdown">
+						<a class="nav-link lock dropdown-toggle" id="dropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false" href="#">
+							<span class="material-icons md-48" id="sign-icon">lock_open</span>
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<li><a class="dropdown-item" routerLink="/seguridad/identificar">Sign In</a></li>
+							<li><a class="dropdown-item" routerLink="#">Sign Up</a></li>
+
+						</ul>
+					</div>
+					<a class="nav-link" id="sign-responsive" routerLink="#">Sign In / Sign Up</a>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+</header>

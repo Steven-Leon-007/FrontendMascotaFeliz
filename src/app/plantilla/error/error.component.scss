@@ -1,0 +1,43 @@
+body{
+    background: radial-gradient(#271f27, rgb(10, 10, 10));
+}
+
+main{
+    margin: auto;
+    width: 60%;
+    position: relative;
+    display: flex;
+
+
+
+
+    .error-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+
+
+        img{
+            width: 140%;
+        }
+
+        p{
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        a{
+            border: 1px solid rgb(58, 52, 52);
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+        
+    }
+}
+
+.link-return:hover{
+    color: #fff;
+    background-color: #442f44;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all 0.3s ease;
+}

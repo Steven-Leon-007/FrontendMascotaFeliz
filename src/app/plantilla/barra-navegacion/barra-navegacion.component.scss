@@ -1,0 +1,107 @@
+nav{
+    background: #171219 !important;
+    padding: 3rem 0rem;
+    
+    a{
+        color: #fff !important;
+        font-size: 2rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    img{
+        width: 8rem;
+        margin-left: 2rem;
+    }
+
+    #logo-text{    
+    font-size: 3.5rem;
+    font-family: 'Kalam', cursive;
+    font-weight: lighter;
+    padding-top: 1rem;
+    margin-left: .5rem;
+    flex: 1;
+    }
+
+    #navbarNavAltMarkup{
+        justify-content: flex-end;
+        margin-right: 4rem;
+    }
+
+    .nav-link{
+        padding: 1rem 2rem;
+        border-radius: 1.2rem;
+    }
+
+    .navbar-toggler-icon{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(256,256,256, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      }
+      
+      .custom-toggler.navbar-toggler {
+        border-color: #225560;
+
+      } 
+
+    #sign-responsive{
+        display: none;
+    }
+
+    #dropdownMenuLink{
+        display: inline-block;
+    }
+
+}
+
+.nav-link:not(.lock):hover{
+    background-color: #225560;
+    
+}
+
+#sign-icon:hover{
+    color: #dac23d;
+
+}
+
+.dropdown-menu{
+    background: #171219;
+    width: 130%;
+    border-radius: 1rem;
+    border: 1px solid #4b474b;
+
+    a{
+        text-align: center;
+    }
+}
+
+.dropdown-item:hover{
+    background-color: #225560;
+    transition: all 0.5s ease;
+}
+
+
+@media screen and (max-width: 992px){
+    
+#navbarNavAltMarkup{
+    margin-top: 4rem;
+}
+
+#dropdownMenuLink{
+    display: none !important;
+}
+
+#sign-responsive{
+    display: inline-block !important;
+}
+
+#sign-responsive:hover{
+    background: #dac23d;
+}
+    
+}
+
+
+
