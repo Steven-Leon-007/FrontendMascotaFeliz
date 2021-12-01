@@ -1,1 +1,46 @@
-<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+
+    <section>
+        <div class="form-container">
+            <div class="container contact-form">
+                <h1>Contactanos</h1>
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <img src="assets/img/dog-form.jpg" alt="perro formulario" class="img-dog">
+                    </div>
+                    <div class="col-md-6">
+                        <form action="https://formspree.io/f/xdobnpwg" method="POST" id="my-form">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefono</label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Celular/Telefono"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea class="form-control" placeholder="Tu mensaje" id="message" name="message" rows="6"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn draw-border">Enviar</button>
+                            </div>
+                        </form>
+                        <div id="status" class="success"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../../../assets/js/main-inicio.component.js"></script>

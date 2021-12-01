@@ -36,7 +36,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-
+              "src/assets/js/main-inicio.component.js"
             ]
           },
           "configurations": {

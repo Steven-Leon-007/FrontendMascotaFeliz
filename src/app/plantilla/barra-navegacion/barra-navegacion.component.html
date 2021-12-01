@@ -12,10 +12,11 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Usuarios</a>
+					<!--<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Usuarios</a>-->
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Servicios</a>
+					<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Solicitar afiliación</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Solicitudes</a>
-					<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Informes</a>
+					<!--<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Informes</a>-->
 
 
 					<div class="dropdown">
@@ -26,7 +27,7 @@
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 							<li *ngIf="!seInicioSesion"><a class="dropdown-item"
 									routerLink="/seguridad/identificar">Sign In</a></li>
-							<li *ngIf="!seInicioSesion"><a class="dropdown-item" routerLink="#">Sign Up</a></li>
+							<li *ngIf="!seInicioSesion"><a class="dropdown-item" routerLink="/administracion/personas/crear-persona">Sign Up</a></li>
 							<li *ngIf="seInicioSesion"><a *ngIf="seInicioSesion" class="nav-link"
 									routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a>
 							</li>

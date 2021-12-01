@@ -7,7 +7,7 @@ import { EliminarPersonaComponent } from './personas/eliminar-persona/eliminar-p
 
 const routes: Routes = [
   {
-    path: "crear-persona",
+    path: "personas/crear-persona",
     component: CrearPersonaComponent
   },
   {

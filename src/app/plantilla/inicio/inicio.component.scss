@@ -1,0 +1,178 @@
+
+
+.form-container {
+    background: radial-gradient(#310d20, #171219);
+    padding: 10px;
+
+    .container {
+        margin: 5rem auto;
+    }
+    hr {
+        background: white;
+    }
+
+    .contact-form {
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 1rem;
+        color: white;
+        padding: 50px 30px;
+
+        label {
+            margin: 10px 0px 5px;
+            font-size: 16px;
+        }
+
+        input{
+            border: 1px solid #594159;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 8px;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        textarea{
+            border: 1px solid #594159;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 13.7px;
+            
+        }
+
+        textarea::placeholder{
+            color: #bbb1b179;
+            font-size: 12px;
+        }
+
+        input::placeholder{
+            color: #bbb1b179;
+        }
+
+        .btn{
+            margin: 25px auto 0px;
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: .2rem;
+            font-size: 14px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    .img-dog{
+        width: 90%;
+        margin-left: 10px;
+        margin-top: 2rem;
+        border: 2px solid #fff;
+        border-radius: 3px;
+    }
+}
+
+#status{
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 3px;
+    margin: 10px auto;
+    font-size: 1.5rem;
+    border-radius: 4px;
+}
+
+
+#status.success{
+
+    animation: status 4s ease forwards;
+}
+
+#status.error{
+    background: rgb(250, 33, 33, .5);
+    animation: status 4s ease forwards;
+}
+
+@keyframes status {
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+    box-shadow: inset 0 0 0 $width $color;
+    color: $color;
+    transition: color $duration $duration/3;
+    position: relative;
+    
+    &::before,
+    &::after {
+      border: 0 solid transparent;
+      box-sizing: border-box;
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      width: 0; height: 0;
+      
+      #{$vertical}: 0; 
+      #{$horizontal}: 0;
+    }
+  
+    &::before {
+      $h-side: if($horizontal == 'left', 'right', 'left');
+      
+      border-#{$vertical}-width: $width;
+      border-#{$h-side}-width: $width;
+    }
+    
+    &::after {
+      $v-side: if($vertical == 'top', 'bottom', 'top');
+      
+      border-#{$v-side}-width: $width;
+      border-#{$horizontal}-width: $width;
+    }
+    
+    &:hover {
+      color: $hover;
+      
+      &::before,
+      &::after {
+        border-color: $hover;
+        transition: border-color 0s, width $duration, height $duration;
+        width: 100%;
+        height: 100%;
+      }
+      
+      &::before { transition-delay: 0s, 0s, $duration; }
+      
+      &::after { transition-delay: 0s, $duration, 0s; }
+    }
+  }
+  
+  .draw-border {
+    @include btn-border-drawing(#918c96, #56176b, 2px, bottom, right);
+  }
+  
+  
+
+input:focus, textarea:focus{
+    box-shadow: 0 0 4px #541b9e;
+    outline-offset: 0px;
+    outline: none;
+}
+
+@media screen and (max-width: 768px) {
+    .img-dog{
+        margin-left: 24px !important;
+        margin-bottom: 14px;
+    }
+}
+    
+
+
