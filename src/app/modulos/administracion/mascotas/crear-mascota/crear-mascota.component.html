@@ -1,0 +1,55 @@
+<html>
+<section>
+   <div class="form-container">
+       <div class="container contact-form">
+           <h1>Formulario de Solicitud</h1>
+           <hr>
+
+           <div class="row">
+
+               <div class="col-md-6">
+                   <img src="assets/img/dog-form.jpg" alt="perro formulario" class="img-dog">
+               </div>
+               <div class="col-md-6">
+                   <form [formGroup]="fgValidador" (ngSubmit)="RegistrarMascota()" action="https://formspree.io/f/xdobnpwg" id="my-form">
+                       <div class="form-group">
+                           <label for="name">Nombre</label>
+                           <input formControlName="nombre" type="text" class="form-control" id="txtNombre" placeholder="Nombre" required>
+                       </div>
+                       <div class="form-group">
+                           <label for="email">Estado</label>
+                           <input formControlName="estado" type="text" class="form-control" id="txtEstado" placeholder="Estado" required>
+                       </div>
+                       <div class="form-group">
+                           <label for="phone">Tipo</label>
+                           <input formControlName="tipo" type="text" class="form-control" id="txtTipo" placeholder="Tipo" required>
+                       </div>
+                       <div class="form-group">
+                        <label for="phone">Raza</label>
+                        <input formControlName="raza" type="text" class="form-control" id="txtRaza" placeholder="Raza" required>
+                        <div class="form-group">
+                           <label for="phone">Sexo</label>
+                           <input formControlName="sexo" type="text" class="form-control" id="txtSexo" placeholder="Sexo" required>
+                       </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="phone">Fecha Nacimiento</label>
+                        <input formControlName="fecha" type="date" id="txtFecha" name="fecha1" class="fas fa-calendar-day">   
+                        </div>
+                      <div class="form-group">
+                        <label for="phone">Imagen</label>
+                        <input formControlName="imagen" type="text" class="form-control" id="txtImagen" placeholder="Imagen" required>
+                     </div>
+                     <p class="center-align">
+                        <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i
+                                class="material-icons right">send</i>Enviar Solicitud</button>
+                    </p>
+                   </form>
+                   <div id="status" class="success"></div>
+               </div>
+           </div>
+       </div>
+
+   </div>
+</section>
+</html>
