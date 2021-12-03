@@ -1,41 +1,43 @@
-<div class="form_wrapper">
-    <div class="form_container">
-      <div class="title_container">
-        <h2>Registro</h2>
-      </div>
-      <div class="row clearfix">
-        <div class="">
-          <form [formGroup]="fgValidador" (ngSubmit)="RegistrarPersona()">
-            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-              <input formControlName="correo" type="email" name="correo" placeholder="Correo" id="txtCorreo" required />
-            </div>
-                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input formControlName="nombre" type="text" name="nombre" placeholder="Nombre" id="txtNombre" required/>
-                </div>
-                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                  <input formControlName="apellidos" type="text" name="apellidos" placeholder="Apellidos" id="txtApellidos" required />
-              </div>
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                <input formControlName="direccion" type="text" name="direccion" placeholder="Direccion" id="txtDireccion" required />
-              </div>
-              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                <input formControlName="ciudad" type="text" name="ciudad" placeholder="Ciudad" id="txtCiudad" required />
-              </div>
-                <div class="input_field select_option">
-                  <select formControlName="rol" name="rol" id="txtRol" required>
-                    <option>Seleccione el rol</option>
-                    <option>1</option>
-                    <option>2</option>
-                  </select>
-                  <div class="select_arrow"></div>
-                </div>
-              <div class="input_field checkbox_option">
-                  <input type="checkbox" id="cb1">
-                  <label for="cb1">I agree with terms and conditions</label>
-              </div>
-            <input class="button" type="submit" value="Registrar" />
-          </form>
+<div class="register_container">
+  <div class="register-form-container">
+    <div class="title_container">
+      <h2>Registro</h2>
+    </div>
+    <div class="row">
+
+      <form [formGroup]="fgValidador" (ngSubmit)="RegistrarPersona()">
+        <div class="form-group">
+          <label>Correo</label>
+          <input formControlName="correo" type="email" name="correo" class="form-control" placeholder="Correo"
+            id="txtCorreo" required />
         </div>
-      </div>
+        <div class="form-group">
+          <label>Nombre</label>
+          <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre"
+            id="txtNombre" required />
+        </div>
+        <div class="form-group">
+          <label>Apellidos</label>
+          <input formControlName="apellidos" type="text" name="apellidos" class="form-control" placeholder="Apellidos"
+            id="txtApellidos" required />
+        </div>
+        <div class="form-group">
+          <label>Dirección</label>
+          <input formControlName="direccion" type="text" name="direccion" class="form-control" placeholder="Direccion"
+            id="txtDireccion" required />
+        </div>
+        <div class="form-group">
+          <label>Ciudad</label>
+          <input formControlName="ciudad" type="text" name="ciudad" class="form-control" placeholder="Ciudad"
+            id="txtCiudad" required />
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="rol" name="rol" class="form-control" id="txtRol" value="1" readonly hidden
+            required>
+
+        </div>
+        <button class="button-send" type="submit" value="Registrar" >Registrar</button>
+      </form>
     </div>
   </div>
+</div>

@@ -1,46 +1,106 @@
-
-    <section>
-        <div class="form-container">
-            <div class="container contact-form">
-                <h1>Contactanos</h1>
-                <hr>
-
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <img src="assets/img/dog-form.jpg" alt="perro formulario" class="img-dog">
+<section>
+    <div class="container-first">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img alt="Bootstrap Image Preview" src="../../../assets/img/cat-background.jpg"
+                                class="column-cat" id="grayscale" />
+                        </div>
+                        <div class="col-md-6 main-paragraph">
+                            <p>Prestamos un servicio médico integral para mascotas, contando con una amplia cobertura en
+                                salud en el mercado y con profesionales altamente calificados y comprometidos con el
+                                cuidado y protección de tus <a class="special-word">peluditos.</a></p>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <form action="https://formspree.io/f/xdobnpwg" method="POST" id="my-form">
-                            <div class="form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Telefono</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Celular/Telefono"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea class="form-control" placeholder="Tu mensaje" id="message" name="message" rows="6"
-                                    required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn draw-border">Enviar</button>
-                            </div>
-                        </form>
-                        <div id="status" class="success"></div>
-                    </div>
-
                 </div>
             </div>
-
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="../../../assets/js/main-inicio.component.js"></script>
+<section class="dark">
+    <div class="container py-4">
+        <h1 class="h1 text-center" id="pageHeaderTitle"></h1>
+
+        <article class="postcard dark blue">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+            </a>
+            <div class="postcard__text">
+                <h1 class="postcard__title blue"><a href="#">Misión</a></h1>
+
+                <div class="postcard_bar mision_bar"></div>
+                <div class="postcard_preview-txt  mision_text">Brindar productos y servicios de calidad en pro del
+                    bienestar de su
+                    mascota, buscando tener cobertura en las principales ciudades del país a través de membresías
+                    preferenciales para sus perros y gatos, quienes serán atendidos por profesionales calificados y con
+                    productos veterinarios de calidad.</div>
+            </div>
+        </article>
+        <article class="postcard dark red">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="https://picsum.photos/501/500" alt="Image Title" />
+            </a>
+            <div class="postcard__text">
+                <h1 class="postcard_title red"><a href="#" class="vision_card">Visión</a></h1>
+
+                <div class="postcard_bar vision_bar"></div>
+                <div class="postcard_preview-txt vision_text">Expandir nuestros servicios a lo largo del territorio
+                    nacional e
+                    internacional, convirtiéndonos en una empresa líder en la prestación de servicios médicos
+                    veterinarios, comprometida con la salud y bienestar de las mascotas en Colombia. Además de brindar
+                    oportunidades laborales a profesionales de medicina veterinaria.</div>
+            </div>
+        </article>
+    </div>
+
+</section>
+
+<section>
+    <div class="form-container">
+        <div class="container contact-form">
+            <h1>Contactanos</h1>
+            <hr>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <img src="assets/img/dog-form.jpg" alt="perro formulario" class="img-dog">
+                </div>
+                <div class="col-md-6">
+                    <form action="https://formspree.io/f/xdobnpwg" method="POST" id="my-form">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefono</label>
+                            <input type="text" class="form-control" id="phone" name="phone"
+                                placeholder="Celular/Telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea class="form-control" placeholder="Tu mensaje" id="message" name="message" rows="6"
+                                required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn draw-border">Enviar</button>
+                        </div>
+                    </form>
+                    <div id="status" class="success"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="../../../assets/js/main-inicio.component.js"></script>

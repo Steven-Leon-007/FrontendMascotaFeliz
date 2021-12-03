@@ -8,6 +8,7 @@ import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
 import { EditarPersonaComponent } from './personas/editar-persona/editar-persona.component';
 import { EliminarPersonaComponent } from './personas/eliminar-persona/eliminar-persona.component';
+import { SolicitudAfiliacionComponent } from './solicitud-afiliacion/solicitud-afiliacion.component';
 
 const routes: Routes = [
   {
@@ -15,15 +16,15 @@ const routes: Routes = [
     component: CrearPersonaComponent
   },
   {
-    path: "editar-persona",
+    path: "personas/editar-persona",
     component: EditarPersonaComponent
   },
   {
-    path: "buscar-persona",
+    path: "personas/buscar-persona",
     component: BuscarPersonaComponent
   },
   {
-    path: "eliminar-persona",
+    path: "personas/eliminar-persona",
     component: EliminarPersonaComponent
   },
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
     component: CrearMascotaComponent
   },
   {
-    path: "mascotas/editar-mascota",
+    path: "mascotas/editar-mascota/:id",
     component: EditarMascotaComponent
   },
   {
@@ -41,7 +42,12 @@ const routes: Routes = [
   {
     path: "mascotas/eliminar-mascota",
     component: EliminarMascotaComponent
-  }
+  },
+  {
+    path: "solicitud-afiliacion",
+    component: SolicitudAfiliacionComponent
+  },
+
 ];
 
 @NgModule({

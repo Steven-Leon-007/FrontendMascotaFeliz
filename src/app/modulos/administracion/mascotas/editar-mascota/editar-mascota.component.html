@@ -1,1 +1,71 @@
-<p>editar-mascota works!</p>
+<html>
+<section>
+   <div class="form-container">
+       <div class="container contact-form">
+           <h1>Aprobación/Negación Solicitud</h1>
+           <hr>
+
+           <div class="row">
+
+               <div class="col-md-6">
+                   <img src="assets/img/dog-form.jpg" alt="perro formulario" class="img-dog">
+               </div>
+               <div class="col-md-6">
+                   <form [formGroup]="fgValidador" (ngSubmit)="EditarMascota()" action="https://formspree.io/f/xdobnpwg" id="my-form">
+                       <input type="hidden" formControlName="id">
+                       <div class="form-group">
+                           <label for="name">Nombre</label>
+                           <input formControlName="nombre" type="text" class="form-control" id="txtNombre" placeholder="Nombre" readonly>
+                       </div>
+                       <div class="form-group">
+                           <label for="phone">Tipo</label>
+                           <input formControlName="tipo" type="text" class="form-control" id="txtTipo" placeholder="Tipo" readonly>
+                       </div>
+                       <div class="form-group">
+                        <label for="phone">Raza</label>
+                        <input formControlName="raza" type="text" class="form-control" id="txtRaza" placeholder="Raza" readonly>
+                        <div class="form-group">
+                           <label for="phone">Sexo</label>
+                           <input formControlName="sexo" type="text" class="form-control" id="txtSexo" placeholder="Sexo" readonly>
+                       </div>
+                        </div>
+                        <div class="form-group">
+                        <label for="phone">Fecha Nacimiento</label>
+                        <input formControlName="fecha" type="date" id="txtFecha" name="fecha1" class="fas fa-calendar-day" readonly>   
+                        </div>
+                      <div class="form-group">
+                        <label for="phone">Imagen</label>
+                        <input formControlName="imagen" type="text" class="form-control" id="txtImagen" placeholder="Imagen" readonly>
+                     </div>
+                     <div class="form-group">
+                        <label for="phone">Fecha Solicitud</label>
+                        <input formControlName="fechaSolicitud" type="date" id="txtFechaSolicitud" name="fecha1" class="fas fa-calendar-day" readonly>   
+                        </div>
+                        <select formControlName="estado" class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="Aceptado">Aceptado</option>
+                            <option value="Rechazado">Rechazado</option>
+                            <option value="Pendiente">Pendiente</option>
+                          </select>
+                     <p class="center-align">
+                        <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i
+                                class=""></i>Actualizar Estado </button>
+                    </p>
+                    <a routerLink="/administracion/mascotas/buscar-mascota">Regresar</a>
+                    <a class="btn btn-danger" (click)="delete()">Borrar</a>
+                   </form>
+                   <form [formGroup]="fgValidadorSolicitud" (ngSubmit)="CrearSolicitudAfiliacion()">
+                    <div class="form-group">
+                        <label for="phone">Comentario</label>
+                        <input formControlName="comentario" type="text" class="form-control" id="txtComentario" required>
+                     </div>
+                     <button [disabled]="!fgValidador.valid" type="button" type="submit">Enviar Comentario</button>
+                   </form>
+                   <div id="status" class="success"></div>
+               </div>
+           </div>
+       </div>
+
+   </div>
+</section>
+</html>

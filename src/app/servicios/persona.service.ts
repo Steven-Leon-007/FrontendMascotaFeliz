@@ -22,4 +22,8 @@ export class PersonaService {
       })
     })
   }
+
+  ObtenerPersonaMascotaPorId(id:string): Observable<ModeloPersona>{
+    return this.http.get<ModeloPersona>(`${this.url}/clientes/${id}`);
+  }
 }

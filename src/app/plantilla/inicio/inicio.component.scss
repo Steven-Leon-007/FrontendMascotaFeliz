@@ -1,7 +1,422 @@
+$main-green: #79dd09 !default;
+$main-green-rgb-015: rgba(121, 221, 9, 0.1) !default;
+$main-yellow: #bdbb49 !default;
+$main-yellow-rgb-015: rgba(189, 187, 73, 0.1) !default;
+$main-red: #bd150b !default;
+$main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
+$main-blue: #0076bd !default;
+$main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
+.container-first {
+    padding: 10rem 5rem;
+    background-image: linear-gradient(
+        to left top,
+        #225560,
+        #234756,
+        #253a49,
+        #242d3b,
+        #20212c,
+        #1f1c27,
+        #1d1722,
+        #1c121d,
+        #21121f,
+        #261120,
+        #2b0f21,
+        #310d20
+    );
+    box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.6);
+
+
+    .main-content {
+        padding: 3rem;
+
+        /*GrayScale*/
+        #grayscale {
+            width: 100%;
+            border-radius: 1rem;
+            border: 1px solid #535151;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            -webkit-transition: 0.6s ease-in-out;
+            transition: 0.6s ease-in-out;
+
+        }
+        #grayscale:hover {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .main-paragraph {
+            display: flex;
+            align-items: center;
+            padding: 0 4rem 0 5rem;
+            p {
+                font-size: 2.5rem;
+                line-height: 4rem;
+            }
+        }
+    }
+
+    .special-word:hover{
+        color: #ddda16;
+    }
+}
+
+/* This pen */
+body {
+    font-family: "Baloo 2", cursive;
+    font-size: 16px;
+    color: #ffffff;
+    text-rendering: optimizeLegibility;
+    font-weight: initial;
+}
+
+.dark {
+    background: #110f16;
+}
+
+.light {
+    background: #f3f5f7;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+#pageHeaderTitle {
+    margin: 2rem 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* Cards */
+.postcard {
+    flex-wrap: wrap;
+    display: flex;
+
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+    border-radius: 10px;
+    margin: 5rem 0 5rem 0;
+    overflow: hidden;
+    position: relative;
+    color: #ffffff;
+
+    &.dark {
+        background-color: #18151f;
+    }
+    &.light {
+        background-color: #e1e5ea;
+    }
+
+    .t-dark {
+        color: #18151f;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    h1,
+    .h1 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    .small {
+        font-size: 80%;
+    }
+
+    .vision__card {
+        margin-left: 18px;
+    }
+
+    .postcard__img {
+        max-height: 180px;
+        width: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+
+    .postcard__img_link {
+        display: contents;
+    }
+
+    .postcard__bar {
+        width: 50px;
+        height: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background-color: #424242;
+        transition: width 0.2s ease;
+    }
+
+    .postcard__text {
+        padding: 1.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .postcard__preview-txt {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        height: 100%;
+        font-size: 18px;
+        margin-top: 12px;
+        line-height: 4rem;
+    }
+
+    .postcard_preview-txt:not(.mision_text) {
+        margin-left: 20px;
+    }
+
+    .postcard_bar:not(.mision_bar) {
+        margin-left: 24px;
+    }
+    .postcard__tagbox {
+        display: flex;
+        flex-flow: row wrap;
+        font-size: 14px;
+        margin: 20px 0 0 0;
+        padding: 0;
+        justify-content: center;
+
+        .tag__item {
+            display: inline-block;
+            background: rgba(83, 83, 83, 0.4);
+            border-radius: 3px;
+            padding: 2.5px 10px;
+            margin: 0 5px 5px 0;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background: rgba(83, 83, 83, 0.8);
+            }
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(-70deg, #424242, transparent 50%);
+        opacity: 1;
+        border-radius: 10px;
+    }
+
+    &:hover .postcard__bar {
+        width: 100px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .postcard {
+        flex-wrap: inherit;
+
+        .postcard__title {
+            font-size: 3rem;
+        }
+
+        .postcard__tagbox {
+            justify-content: start;
+        }
+
+        .postcard__img {
+            max-width: 300px;
+            max-height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .postcard__text {
+            padding: 3rem;
+            width: 100%;
+        }
+
+        .media.postcard__text:before {
+            content: "";
+            position: absolute;
+            display: block;
+            background: #18151f;
+            top: -20%;
+            height: 130%;
+            width: 55px;
+        }
+
+        &:hover .postcard__img {
+            transform: scale(1.1);
+        }
+
+        &:nth-child(2n + 1) {
+            flex-direction: row;
+        }
+
+        &:nth-child(2n + 0) {
+            flex-direction: row-reverse;
+        }
+
+        &:nth-child(2n + 1) .postcard__text::before {
+            left: -12px !important;
+            transform: rotate(4deg);
+        }
+
+        &:nth-child(2n + 0) .postcard__text::before {
+            right: -12px !important;
+            transform: rotate(-4deg);
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .postcard__text {
+        padding: 2rem 3.5rem;
+    }
+
+    .postcard__text:before {
+        content: "";
+        position: absolute;
+        display: block;
+
+        top: -20%;
+        height: 130%;
+        width: 55px;
+    }
+
+    .postcard.dark {
+        .postcard__text:before {
+            background: #18151f;
+        }
+    }
+    .postcard.light {
+        .postcard__text:before {
+            background: #e1e5ea;
+        }
+    }
+}
+
+/* COLORS */
+.postcard .postcard__tagbox .green.play:hover {
+    background: $main-green;
+    color: black;
+}
+.green .postcard__title:hover {
+    color: $main-green;
+}
+.green .postcard__bar {
+    background-color: $main-green;
+}
+.green::before {
+    background-image: linear-gradient(-30deg, $main-green-rgb-015, transparent 50%);
+}
+.green:nth-child(2n)::before {
+    background-image: linear-gradient(30deg, $main-green-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .blue.play:hover {
+    background: $main-blue;
+}
+.blue .postcard__title:hover {
+    color: $main-blue;
+}
+.blue .postcard__bar {
+    background-color: $main-blue;
+}
+.blue::before {
+    background-image: linear-gradient(-30deg, $main-blue-rgb-015, transparent 50%);
+}
+.blue:nth-child(2n)::before {
+    background-image: linear-gradient(30deg, $main-blue-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .red.play:hover {
+    background: $main-red;
+}
+.red .postcard__title:hover {
+    color: $main-red;
+}
+.red .postcard__bar {
+    background-color: $main-red;
+}
+.red::before {
+    background-image: linear-gradient(-30deg, $main-red-rgb-015, transparent 50%);
+}
+.red:nth-child(2n)::before {
+    background-image: linear-gradient(30deg, $main-red-rgb-015, transparent 50%);
+}
+
+.postcard .postcard__tagbox .yellow.play:hover {
+    background: $main-yellow;
+    color: black;
+}
+.yellow .postcard__title:hover {
+    color: $main-yellow;
+}
+.yellow .postcard__bar {
+    background-color: $main-yellow;
+}
+.yellow::before {
+    background-image: linear-gradient(-30deg, $main-yellow-rgb-015, transparent 50%);
+}
+.yellow:nth-child(2n)::before {
+    background-image: linear-gradient(30deg, $main-yellow-rgb-015, transparent 50%);
+}
+
+@media screen and (min-width: 769px) {
+    .green::before {
+        background-image: linear-gradient(-80deg, $main-green-rgb-015, transparent 50%);
+    }
+    .green:nth-child(2n)::before {
+        background-image: linear-gradient(80deg, $main-green-rgb-015, transparent 50%);
+    }
+
+    .blue::before {
+        background-image: linear-gradient(-80deg, $main-blue-rgb-015, transparent 50%);
+    }
+    .blue:nth-child(2n)::before {
+        background-image: linear-gradient(80deg, $main-blue-rgb-015, transparent 50%);
+    }
+
+    .red::before {
+        background-image: linear-gradient(-80deg, $main-red-rgb-015, transparent 50%);
+    }
+    .red:nth-child(2n)::before {
+        background-image: linear-gradient(80deg, $main-red-rgb-015, transparent 50%);
+    }
+
+    .yellow::before {
+        background-image: linear-gradient(-80deg, $main-yellow-rgb-015, transparent 50%);
+    }
+    .yellow:nth-child(2n)::before {
+        background-image: linear-gradient(80deg, $main-yellow-rgb-015, transparent 50%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .vision__card {
+        margin-left: 0px !important;
+    }
+
+    .vision__bar {
+        margin-left: 0px !important;
+    }
+
+    .main-paragraph{
+        margin-top: 5rem !important;
+        padding: 0rem;
+    }
+}
 
 .form-container {
-    background: radial-gradient(#310d20, #171219);
+    background-image: linear-gradient(to left top, #310d20, #2a1020, #22111f, #1c121d, #171219);
     padding: 10px;
 
     .container {
@@ -22,7 +437,7 @@
             font-size: 16px;
         }
 
-        input{
+        input {
             border: 1px solid #594159;
             padding: 5px;
             background: rgba(0, 0, 0, 0.3);
@@ -31,36 +446,35 @@
             font-size: 12px;
         }
 
-        textarea{
+        textarea {
             border: 1px solid #594159;
             background: rgba(0, 0, 0, 0.3);
             color: #fff;
             font-size: 13.7px;
-            
         }
 
-        textarea::placeholder{
+        textarea::placeholder {
             color: #bbb1b179;
             font-size: 12px;
         }
 
-        input::placeholder{
+        input::placeholder {
             color: #bbb1b179;
         }
 
-        .btn{
+        .btn {
             margin: 25px auto 0px;
             width: 100%;
             padding: 8px;
             border: none;
-            border-radius: .2rem;
+            border-radius: 0.2rem;
             font-size: 14px;
             color: #fff;
             background: rgba(0, 0, 0, 0.6);
         }
     }
 
-    .img-dog{
+    .img-dog {
         width: 90%;
         margin-left: 10px;
         margin-top: 2rem;
@@ -69,7 +483,7 @@
     }
 }
 
-#status{
+#status {
     width: 100%;
     max-width: 300px;
     text-align: center;
@@ -79,100 +493,106 @@
     border-radius: 4px;
 }
 
-
-#status.success{
-
+#status.success {
     animation: status 4s ease forwards;
 }
 
-#status.error{
-    background: rgb(250, 33, 33, .5);
+#status.error {
+    background: rgb(250, 33, 33, 0.5);
     animation: status 4s ease forwards;
 }
 
 @keyframes status {
-    0%{
+    0% {
         opacity: 1;
         pointer-events: all;
     }
-    90%{
+    90% {
         opacity: 1;
         pointer-events: all;
     }
-    100%{
+    100% {
         opacity: 0;
         pointer-events: none;
     }
 }
 
-@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+@mixin btn-border-drawing(
+    $color: #ccc,
+    $hover: black,
+    $width: 2px,
+    $vertical: top,
+    $horizontal: left,
+    $duration: 0.25s
+) {
     box-shadow: inset 0 0 0 $width $color;
     color: $color;
     transition: color $duration $duration/3;
     position: relative;
-    
+
     &::before,
     &::after {
-      border: 0 solid transparent;
-      box-sizing: border-box;
-      content: '';
-      pointer-events: none;
-      position: absolute;
-      width: 0; height: 0;
-      
-      #{$vertical}: 0; 
-      #{$horizontal}: 0;
-    }
-  
-    &::before {
-      $h-side: if($horizontal == 'left', 'right', 'left');
-      
-      border-#{$vertical}-width: $width;
-      border-#{$h-side}-width: $width;
-    }
-    
-    &::after {
-      $v-side: if($vertical == 'top', 'bottom', 'top');
-      
-      border-#{$v-side}-width: $width;
-      border-#{$horizontal}-width: $width;
-    }
-    
-    &:hover {
-      color: $hover;
-      
-      &::before,
-      &::after {
-        border-color: $hover;
-        transition: border-color 0s, width $duration, height $duration;
-        width: 100%;
-        height: 100%;
-      }
-      
-      &::before { transition-delay: 0s, 0s, $duration; }
-      
-      &::after { transition-delay: 0s, $duration, 0s; }
-    }
-  }
-  
-  .draw-border {
-    @include btn-border-drawing(#918c96, #56176b, 2px, bottom, right);
-  }
-  
-  
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        height: 0;
 
-input:focus, textarea:focus{
+        #{$vertical}: 0;
+        #{$horizontal}: 0;
+    }
+
+    &::before {
+        $h-side: if($horizontal == "left", "right", "left");
+
+        border-#{$vertical}-width: $width;
+        border-#{$h-side}-width: $width;
+    }
+
+    &::after {
+        $v-side: if($vertical == "top", "bottom", "top");
+
+        border-#{$v-side}-width: $width;
+        border-#{$horizontal}-width: $width;
+    }
+
+    &:hover {
+        color: $hover;
+
+        &::before,
+        &::after {
+            border-color: $hover;
+            transition: border-color 0s, width $duration, height $duration;
+            width: 100%;
+            height: 100%;
+        }
+
+        &::before {
+            transition-delay: 0s, 0s, $duration;
+        }
+
+        &::after {
+            transition-delay: 0s, $duration, 0s;
+        }
+    }
+}
+
+.draw-border {
+    @include btn-border-drawing(#918c96, #56176b, 2px, bottom, right);
+}
+
+input:focus,
+textarea:focus {
     box-shadow: 0 0 4px #541b9e;
     outline-offset: 0px;
     outline: none;
 }
 
 @media screen and (max-width: 768px) {
-    .img-dog{
+    .img-dog {
         margin-left: 24px !important;
         margin-bottom: 14px;
     }
 }
-    
-
-

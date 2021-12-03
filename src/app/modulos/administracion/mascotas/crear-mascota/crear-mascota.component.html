@@ -40,6 +40,10 @@
                         <label for="phone">Imagen</label>
                         <input formControlName="imagen" type="text" class="form-control" id="txtImagen" placeholder="Imagen" required>
                      </div>
+                     <div class="form-group">
+                        <label for="phone">Fecha Solicitud</label>
+                        <input formControlName="fechaSolicitud" type="date" id="txtFechaSolicitud" name="fecha1" class="fas fa-calendar-day">   
+                        </div>
                      <p class="center-align">
                         <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i
                                 class="material-icons right">send</i>Enviar Solicitud</button>

@@ -20,6 +20,7 @@ import { CrearMascotaComponent } from './mascotas/crear-mascota/crear-mascota.co
 import { BuscarMascotaComponent } from './mascotas/buscar-mascota/buscar-mascota.component';
 import { EditarMascotaComponent } from './mascotas/editar-mascota/editar-mascota.component';
 import { EliminarMascotaComponent } from './mascotas/eliminar-mascota/eliminar-mascota.component';
+import { SolicitudAfiliacionComponent } from './solicitud-afiliacion/solicitud-afiliacion.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { EliminarMascotaComponent } from './mascotas/eliminar-mascota/eliminar-m
     CrearMascotaComponent,
     BuscarMascotaComponent,
     EditarMascotaComponent,
-    EliminarMascotaComponent
+    EliminarMascotaComponent,
+    SolicitudAfiliacionComponent
   ],
   imports: [
     CommonModule,

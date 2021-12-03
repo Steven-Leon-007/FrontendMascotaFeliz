@@ -7,4 +7,6 @@ export class ModeloMascota{
     sexo?: String;
     fechaNacimiento?: String;
     imagen?: String;
+    fechaSolicitud?: String;
+    clienteId?: String;
 }
