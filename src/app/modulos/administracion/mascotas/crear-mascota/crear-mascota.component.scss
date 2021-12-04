@@ -1,8 +1,8 @@
 
 
 .form-container {
-  background: radial-gradient(#310d20, #171219);
-  padding: 10px;
+  background-image: linear-gradient(to left bottom, #171219, #19101a, #1c0e1b, #200c1b, #23091a, #23091a, #23091a, #23091a, #200c1b, #1c0e1b, #19101a, #171219);
+  padding: 20px;
 
   .container {
       margin: 5rem auto;
@@ -12,8 +12,9 @@
   }
 
   .contact-form {
-      background: rgba(0, 0, 0, 0.6);
+      background-image: url(../../../../../assets/img/create-pet-background.jpg);
       border-radius: 1rem;
+      border: 1px solid #323232;
       color: white;
       padding: 50px 30px;
 
@@ -22,14 +23,15 @@
           font-size: 16px;
       }
 
-      input{
-          border: 1px solid #594159;
+      input, select{
+          border: 1px solid #ccb3cc;
           padding: 5px;
-          background: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.6);
           margin-bottom: 8px;
           color: #fff;
           font-size: 12px;
       }
+      
 
       textarea{
           border: 1px solid #594159;
@@ -39,13 +41,14 @@
           
       }
 
-      textarea::placeholder{
-          color: #bbb1b179;
-          font-size: 12px;
+      .send-icon{
+        margin-right: 8px;
+        font-size: 18px;
       }
 
+      
       input::placeholder{
-          color: #bbb1b179;
+          color: #fff;
       }
 
       .btn{
@@ -56,7 +59,7 @@
           border-radius: .2rem;
           font-size: 14px;
           color: #fff;
-          background: rgba(0, 0, 0, 0.6);
+          background: rgba(0, 0, 0, 0.9);
       }
   }
 
@@ -66,6 +69,16 @@
       margin-top: 2rem;
       border: 2px solid #fff;
       border-radius: 3px;
+  }
+
+  .dates-grid{
+    text-align: center;
+    padding: 1rem 3rem;
+
+    input{
+      padding: .5rem 3rem;
+    }
+
   }
 }
 
@@ -79,6 +92,9 @@
   border-radius: 4px;
 }
 
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
 
 #status.success{
 
@@ -168,8 +184,8 @@ input:focus, textarea:focus{
 }
 
 @media screen and (max-width: 768px) {
-  .img-dog{
-      margin-left: 24px !important;
-      margin-bottom: 14px;
+  .contact-form{
+    background-size: cover;
+
   }
 }

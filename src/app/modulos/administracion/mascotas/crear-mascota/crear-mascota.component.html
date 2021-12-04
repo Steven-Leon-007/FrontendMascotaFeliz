@@ -1,59 +1,75 @@
-<html>
 <section>
-   <div class="form-container">
-       <div class="container contact-form">
-           <h1>Formulario de Solicitud</h1>
-           <hr>
+    <div class="form-container">
+        <div class="container contact-form">
+            <h1>Afiliación de Mascotas</h1>
+            <hr>
 
-           <div class="row">
+            <div class="row">
 
-               <div class="col-md-6">
-                   <img src="assets/img/dog-form.jpg" alt="perro formulario" class="img-dog">
-               </div>
-               <div class="col-md-6">
-                   <form [formGroup]="fgValidador" (ngSubmit)="RegistrarMascota()" action="https://formspree.io/f/xdobnpwg" id="my-form">
-                       <div class="form-group">
-                           <label for="name">Nombre</label>
-                           <input formControlName="nombre" type="text" class="form-control" id="txtNombre" placeholder="Nombre" required>
-                       </div>
-                       <div class="form-group">
-                           <label for="email">Estado</label>
-                           <input formControlName="estado" type="text" class="form-control" id="txtEstado" placeholder="Estado" required>
-                       </div>
-                       <div class="form-group">
-                           <label for="phone">Tipo</label>
-                           <input formControlName="tipo" type="text" class="form-control" id="txtTipo" placeholder="Tipo" required>
-                       </div>
-                       <div class="form-group">
-                        <label for="phone">Raza</label>
-                        <input formControlName="raza" type="text" class="form-control" id="txtRaza" placeholder="Raza" required>
+                <div class="container col-md-6">
+                    <form [formGroup]="fgValidador" (ngSubmit)="RegistrarMascota()"
+                        action="https://formspree.io/f/xdobnpwg" id="my-form">
                         <div class="form-group">
-                           <label for="phone">Sexo</label>
-                           <input formControlName="sexo" type="text" class="form-control" id="txtSexo" placeholder="Sexo" required>
-                       </div>
+                            <label for="name">Nombre</label>
+                            <input formControlName="nombre" type="text" class="form-control" id="txtNombre"
+                                placeholder="Nombre" required>
                         </div>
                         <div class="form-group">
-                        <label for="phone">Fecha Nacimiento</label>
-                        <input formControlName="fecha" type="date" id="txtFecha" name="fecha1" class="fas fa-calendar-day">   
+                            <label for="type">Tipo</label>
+                            <select formControlName="tipo" class="form-select" id="txtTipo"
+                                aria-label="Default select example" required>
+                                <option [selected]="true" disabled>Selecciona: </option>
+                                <option value="Canino">Canino</option>
+                                <option value="Felino">Felino</option>
+                            </select>
                         </div>
-                      <div class="form-group">
-                        <label for="phone">Imagen</label>
-                        <input formControlName="imagen" type="text" class="form-control" id="txtImagen" placeholder="Imagen" required>
-                     </div>
-                     <div class="form-group">
-                        <label for="phone">Fecha Solicitud</label>
-                        <input formControlName="fechaSolicitud" type="date" id="txtFechaSolicitud" name="fecha1" class="fas fa-calendar-day">   
-                        </div>
-                     <p class="center-align">
-                        <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn" type="submit"><i
-                                class="material-icons right">send</i>Enviar Solicitud</button>
-                    </p>
-                   </form>
-                   <div id="status" class="success"></div>
-               </div>
-           </div>
-       </div>
 
-   </div>
+                        <div class="form-group">
+                            <label for="breed">Raza</label>
+                            <input formControlName="raza" type="text" class="form-control" id="txtRaza"
+                                placeholder="Raza" required>
+                            <div class="form-group">
+                                <label for="sex">Sexo</label>
+                                <select formControlName="sexo" class="form-select" id="txtSexo"
+                                    aria-label="Default select example" required>
+                                    <option [selected]="true" disabled>Sexo: </option>
+                                    <option value="Canino">Macho</option>
+                                    <option value="Felino">Hembra</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Imagen</label>
+                            <input formControlName="imagen" type="text" class="form-control" id="txtImagen"
+                                placeholder="Imagen (URL)" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 dates-grid">
+                                <div class="form-group">
+                                    <label for="born-date">Fecha Nacimiento</label>
+                                    <input formControlName="fecha" type="date" id="txtFecha" name="fecha1"
+                                        class="nacimiento-grid">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group dates-grid">
+                                    <label for="date">Fecha Solicitud</label><br>
+                                    <input formControlName="fechaSolicitud" type="date" id="txtFechaSolicitud"
+                                        name="fecha1" class="solicitud-grid">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="center-align">
+                            <button class="btn draw-border" type="submit">
+                                Enviar Solicitud
+                            </button>
+                        </p>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 </section>
-</html>

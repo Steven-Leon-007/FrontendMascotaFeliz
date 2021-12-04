@@ -1,48 +1,49 @@
-<html>
-<div>
-    <h1>Lista Solicitudes</h1>
-    <table class="table responsive">
-        <thead>
-            <tr>
-                <th>
-                    Detalles Usuario
-                </th>
-                <th>
-                    Fecha de Solicitud
-                </th>
-                <th>
-                    Estado
-                </th>
-                <th>
-                    Editar Estado
-                </th>
-                <th>
-                    Foto Mascota
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="table-container">
+    <div class="container">
+        <h1>Lista Solicitudes</h1>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="table-head">
+                    <tr>
+                        <th>
+                            Detalles Usuario
+                        </th>
+                        <th>
+                            Fecha de Solicitud
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Editar Estado
+                        </th>
+                        <th class="picture-table">
+                            Foto Mascota
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
 
-            <tr *ngFor="let m of listadoMascotas">
-                <td>
-                    <a routerLink="/administracion/personas/buscar-persona" type="btn">Detalles</a>
-                </td>
-                <td>
-                    {{m.fechaSolicitud}}
-                </td>
-                <td>
-                    {{m.estado}}
-                </td>
-                <td>
-                    <a routerLink="/administracion/mascotas/editar-mascota/{{m.id}}" type="btn">Editar</a>
-                </td>
-                <td>
-                    <img src="{{m.imagen}}" class="imagenMascota">
-                </td>
+                    <tr *ngFor="let m of listadoMascotas">
+                        <td>
+                            <a routerLink="/administracion/personas/buscar-persona" type="btn">Detalles</a>
+                        </td>
+                        <td>
+                            {{m.fechaSolicitud}}
+                        </td>
+                        <td>
+                            {{m.estado}}
+                        </td>
+                        <td>
+                            <a routerLink="/administracion/mascotas/editar-mascota/{{m.id}}" type="btn">Editar</a>
+                        </td>
+                        <td>
+                            <img src="{{m.imagen}}" class="imagenMascota">
+                        </td>
 
-            </tr>
-        </tbody>
-    </table>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
-
-</html>

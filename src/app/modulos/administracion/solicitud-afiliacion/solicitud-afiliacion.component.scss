@@ -1,0 +1,46 @@
+.solicitud-container{
+    padding: 5rem;
+    color: #fff;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8c90d0, #7e86be, #727cad, #5f5e83, #48425c, #302938, #171219);
+    box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.6);
+
+    .container{
+        background: rgba(0, 0, 0, 0.6);
+        padding: 6rem 3rem; 
+        border-radius: .7rem;
+    }
+
+    form{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    h1{
+        margin-bottom: 3rem;
+        margin-left: 5rem;
+    }
+
+    input{
+        border: 1px solid #ccb3cc;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.6);
+        margin-bottom: 8px;
+        color: #fff;
+        font-size: 12px;
+        margin-bottom: 3rem;
+    }
+
+    label{
+        font-size: 14px;
+        margin-bottom: 1rem;
+
+    }
+
+    textarea{
+        border: 1px solid #594159;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 13.7px;
+        
+    }
+}

@@ -32,7 +32,6 @@ export class CrearMascotaComponent implements OnInit {
 
   RegistrarMascota(){
     let nombre = this.fgValidador.controls['nombre'].value;
-    let estado = this.fgValidador.controls['estado'].value;
     let tipo = this.fgValidador.controls['tipo'].value;
     let raza = this.fgValidador.controls['raza'].value;
     let sexo = this.fgValidador.controls['sexo'].value;
@@ -41,7 +40,7 @@ export class CrearMascotaComponent implements OnInit {
     let fechaSolicitud = this.fgValidador.controls['fechaSolicitud'].value;
     let m = new ModeloMascota();
     m.nombre = nombre;
-    m.estado = estado;
+    m.estado = "pendiente";
     m.tipo = tipo;
     m.raza = raza;
     m.sexo = sexo;
