@@ -1,0 +1,27 @@
+<div class="detalles-container">
+    <div class="container">
+        <form [formGroup]="fgValidador" id="my-form">
+            <input type="hidden" formControlName="id">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input formControlName="nombre" type="text" class="form-control" id="txtNombre" >
+            </div>
+            <div class="form-group">
+                <label for="name">Apellidos</label>
+                <input formControlName="apellidos" type="text" class="form-control" id="txtApellidos" >
+            </div>
+            <div class="form-group">
+                <label for="name">Correo</label>
+                <input formControlName="email" type="text" class="form-control" id="txtEmail" >
+            </div>
+            <div class="form-group">
+                <label for="name">Dirección</label>
+                <input formControlName="direccion" type="text" class="form-control" id="txtDireccion" >
+            </div>
+            <div class="form-group">
+                <label for="name">Ciudad</label>
+                <input formControlName="ciudad" type="text" class="form-control" id="txtCiudad" >
+            </div>
+        </form>
+    </div>
+</div>

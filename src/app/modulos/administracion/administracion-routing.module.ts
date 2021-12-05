@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BuscarClienteMascotaComponent } from './mascotas/buscar-cliente-mascota/buscar-cliente-mascota.component';
 import { BuscarMascotaComponent } from './mascotas/buscar-mascota/buscar-mascota.component';
 import { CrearMascotaComponent } from './mascotas/crear-mascota/crear-mascota.component';
 import { EditarMascotaComponent } from './mascotas/editar-mascota/editar-mascota.component';
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: "mascotas/eliminar-mascota",
     component: EliminarMascotaComponent
+  },
+  {
+    path: "mascotas/buscar-cliente-mascota/:id",
+    component: BuscarClienteMascotaComponent
   },
   {
     path: "solicitud-afiliacion",

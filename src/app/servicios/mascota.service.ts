@@ -69,4 +69,20 @@ export class MascotaService {
     return this.http.get<ModeloSolicitudAfiliacion>(`${this.url}/clientes/${id}/solicitud-afiliacions`);
   }
 
+  ObtenerIdCliente(){
+    let datosString = localStorage.getItem("datosSesion");
+    if(datosString){
+      let datos = JSON.parse(datosString);
+      let data = datos.datos;
+      return data.id;
+    }
+    else{
+      return '';
+    }
+  }
+
+  ObtenerPersonaMascotaPorId(id:string): Observable<ModeloPersona>{
+    return this.http.get<ModeloPersona>(`${this.url}/mascotas/${id}/cliente`);
+  }
+
 }

@@ -10,8 +10,6 @@ import { MascotaService } from 'src/app/servicios/mascota.service';
 })
 export class SolicitudAfiliacionComponent implements OnInit {
 
-  startIndex: number = 72;
-
   fgValidador: FormGroup = this.fb.group({
     'petName':["", Validators.required],
     'estado':["", Validators.required],
@@ -23,15 +21,12 @@ export class SolicitudAfiliacionComponent implements OnInit {
 
   ngOnInit(): void {
    this.ObtenerSolicitud();
+   alert(this.servicioMascota.ObtenerIdCliente())
   }
 
 
   ObtenerSolicitud(){
-    console.log(localStorage);
-    var cliente = JSON.stringify(localStorage.getItem('datosSesion')); 
-    var clienteId = JSON.parse(cliente);
-    clienteId = clienteId.substring(this.startIndex, 96);
-    this.servicioMascota.ObtenerSolicitudPorId(clienteId).subscribe((datos: ModeloSolicitudAfiliacion) => {
+    this.servicioMascota.ObtenerSolicitudPorId(this.servicioMascota.ObtenerIdCliente()).subscribe((datos: ModeloSolicitudAfiliacion) => {
       this.fgValidador.controls["petName"].setValue(datos.petName);
       this.fgValidador.controls["estado"].setValue(datos.estado);
       this.fgValidador.controls["comentario"].setValue(datos.comentario);

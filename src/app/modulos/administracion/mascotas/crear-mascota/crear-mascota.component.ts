@@ -11,8 +11,6 @@ import { MascotaService } from 'src/app/servicios/mascota.service';
 
 export class CrearMascotaComponent implements OnInit {
 
-  startIndex: number = 72;
-
   fgValidador: FormGroup = this.fb.group({
     'nombre':["", Validators.required],
     'estado':["", Validators.required],
@@ -28,6 +26,8 @@ export class CrearMascotaComponent implements OnInit {
     private servicioMascota: MascotaService) { }
 
   ngOnInit(): void {
+    this.servicioMascota.ObtenerIdCliente();
+    alert(this.servicioMascota.ObtenerIdCliente())
   }
 
   RegistrarMascota(){
@@ -47,11 +47,7 @@ export class CrearMascotaComponent implements OnInit {
     m.fechaNacimiento = fechaNacimiento;
     m.imagen = imagen;
     m.fechaSolicitud = fechaSolicitud;
-    console.log(localStorage);
-    var cliente = JSON.stringify(localStorage.getItem('datosSesion')); 
-    var clienteId = JSON.parse(cliente);
-    alert('Hello '+clienteId.substring(this.startIndex, 96) +'!');
-    m.clienteId = clienteId.substring(this.startIndex, 96);
+    m.clienteId = this.servicioMascota.ObtenerIdCliente();
 
       
     this.servicioMascota.CrearMascota(m).subscribe((datos: ModeloMascota) => {

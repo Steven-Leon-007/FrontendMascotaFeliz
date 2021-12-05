@@ -12,8 +12,6 @@ import { MascotaService } from 'src/app/servicios/mascota.service';
 })
 export class EditarMascotaComponent implements OnInit {
 
-  startIndex: number= 72;
-
   id: string = "";
 
   fgValidadorSolicitud: FormGroup = this.fb.group({
@@ -22,6 +20,7 @@ export class EditarMascotaComponent implements OnInit {
 
   fgValidador: FormGroup = this.fb.group({
     'id':["", Validators.required],
+    'clienteId':["", Validators.required],
     'nombre':["", Validators.required],
     'estado':["", Validators.required],
     'tipo':["", Validators.required],
@@ -38,12 +37,14 @@ export class EditarMascotaComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];
+
     this.BuscarProducto();
   }
 
   BuscarProducto(){
     this.servicioMascota.ObtenerMascotaPorId(this.id).subscribe((datos: ModeloMascota) => {
       this.fgValidador.controls["id"].setValue(this.id);
+      this.fgValidador.controls["clienteId"].setValue(datos.clienteId);
       this.fgValidador.controls["nombre"].setValue(datos.nombre);
       this.fgValidador.controls["estado"].setValue(datos.estado);
       this.fgValidador.controls["tipo"].setValue(datos.tipo);
@@ -115,15 +116,12 @@ export class EditarMascotaComponent implements OnInit {
   let petName = this.fgValidador.controls['nombre'].value;
   let estado = this.fgValidador.controls['estado'].value;
   let comentario = this.fgValidadorSolicitud.controls['comentario'].value;
-  console.log(localStorage);
-    var cliente = JSON.stringify(localStorage.getItem('datosSesion')); 
-    var clienteId = JSON.parse(cliente);
-    alert('Hello '+clienteId.substring(this.startIndex, 96) +'!');
+  let clienteId = this.fgValidador.controls['clienteId'].value;
   let s = new ModeloSolicitudAfiliacion();
     s.petName = petName;
     s.estado = estado;
     s.comentario = comentario;
-    s.clienteId = clienteId.substring(this.startIndex, 96);
+    s.clienteId = clienteId;
 
     this.servicioMascota.CrearSolicitudAfiliacion(s).subscribe((datos: ModeloSolicitudAfiliacion) => {
       alert("Comentario Enviado Correctamente");

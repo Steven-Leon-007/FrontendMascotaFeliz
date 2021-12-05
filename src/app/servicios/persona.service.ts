@@ -11,7 +11,8 @@ export class PersonaService {
 
   url = 'http://localhost:3000';
   token: String = '';
-  constructor(private http: HttpClient, private seguridadServicio: SeguridadService) {
+  constructor(private http: HttpClient,
+    private seguridadServicio: SeguridadService,) {
     this.token = seguridadServicio.ObtenerToken();
    }
 
@@ -23,7 +24,4 @@ export class PersonaService {
     })
   }
 
-  ObtenerPersonaMascotaPorId(id:string): Observable<ModeloPersona>{
-    return this.http.get<ModeloPersona>(`${this.url}/clientes/${id}`);
-  }
 }

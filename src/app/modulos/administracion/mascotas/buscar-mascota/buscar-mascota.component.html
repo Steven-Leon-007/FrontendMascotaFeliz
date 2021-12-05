@@ -26,7 +26,7 @@
 
                     <tr *ngFor="let m of listadoMascotas">
                         <td>
-                            <a routerLink="/administracion/personas/buscar-persona" type="btn">Detalles</a>
+                            <a routerLink="/administracion/mascotas/buscar-cliente-mascota/{{m.id}}" type="btn">Detalles</a>
                         </td>
                         <td>
                             {{m.fechaSolicitud}}

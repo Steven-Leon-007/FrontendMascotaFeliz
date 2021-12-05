@@ -13,6 +13,7 @@
                     <form [formGroup]="fgValidador" (ngSubmit)="EditarMascota()"
                         action="https://formspree.io/f/xdobnpwg" id="my-form">
                         <input type="hidden" formControlName="id">
+                        <input type="hidden" formControlName="clienteId">
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input formControlName="nombre" type="text" class="form-control" id="txtNombre"
