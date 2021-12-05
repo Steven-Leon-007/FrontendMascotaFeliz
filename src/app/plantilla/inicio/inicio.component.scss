@@ -131,7 +131,7 @@ a:hover {
         font-size: 80%;
     }
 
-    .vision__card {
+    .vision_card {
         margin-left: 18px;
     }
 
@@ -162,7 +162,7 @@ a:hover {
         flex-direction: column;
     }
 
-    .postcard__preview-txt {
+    .postcard_preview-txt {
         overflow: hidden;
         text-overflow: ellipsis;
         text-align: left;
@@ -401,11 +401,15 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
-    .vision__card {
+    .vision_card {
         margin-left: 0px !important;
     }
 
-    .vision__bar {
+    .vision_text{
+        margin-left: 0px !important;
+    }
+
+    .vision_bar {
         margin-left: 0px !important;
     }
 
