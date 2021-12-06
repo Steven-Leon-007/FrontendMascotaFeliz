@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class IdentificacionComponent implements OnInit {
 
+
   fgValidador: FormGroup = this.fb.group({
     'usuario': ['', [Validators.required, Validators.email]],
     'clave': ['', [Validators.required]]
@@ -21,7 +22,14 @@ export class IdentificacionComponent implements OnInit {
     private router :Router) { }
 
   ngOnInit(): void {
+    this.fgValidador = this.fb.group({
+      recaptcha: ['', Validators.required],
+      'usuario': ['', [Validators.required, Validators.email]],
+      'clave': ['', [Validators.required]]
+    });
   }
+
+  siteKey: string = "6LfRn34dAAAAAJi5sEb7ewQCAlyM9iNFccif8_5R";
 
   IdentificarUsuario(){
     let usuario = this.fgValidador.controls["usuario"].value;

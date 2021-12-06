@@ -22,7 +22,13 @@ export class CrearPersonaComponent implements OnInit {
     private servicioPersona: PersonaService) { }
 
   ngOnInit(): void {
+    this.fgValidador = this.fb.group({
+      recaptcha: ['', Validators.required]
+    });
   }
+
+  siteKey: string = "6LfRn34dAAAAAJi5sEb7ewQCAlyM9iNFccif8_5R";
+
 
   RegistrarPersona(){
     let email = this.fgValidador.controls['correo'].value;

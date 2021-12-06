@@ -31,7 +31,11 @@
           <input formControlName="ciudad" type="text" name="ciudad" class="form-control" placeholder="Ciudad"
             id="txtCiudad" required />
         </div>
-        <button class="button-send" type="submit" value="Registrar">Registrar</button>
+        <div class="form-group captcha-box">
+          <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+          </ngx-recaptcha2>
+        </div>
+        <button class="btn draw-border" type="submit" [disabled]="!fgValidador.valid" value="Registrar">Registrar</button>
       </form>
     </div>
   </div>

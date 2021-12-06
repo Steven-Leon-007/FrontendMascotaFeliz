@@ -28,15 +28,19 @@
                         <div class="form-group">
                             <label>Correo Electronico</label>
                             <input formControlName="usuario" class="form-control" type="text" name="email"
-                                placeholder="Enter a valid email address">
+                                placeholder="Ingrese su correo electronico">
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
                             <input formControlName="clave" class="form-control" type="password" name="password"
-                                placeholder="Enter password">
+                                placeholder="Ingrese su contraseña">
+                        </div>
+                        <div class="form-group captcha-box">
+                            <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha">
+                            </ngx-recaptcha2>
                         </div>
                         <div class="login-button">
-                            <button [disabled]="!fgValidador.valid" type="submit" class="btn-login">Login</button>
+                            <button [disabled]="!fgValidador.valid" type="submit" class="btn draw-border">Login</button>
                         </div>
                         <div class="form-group forgot-password">
                             <a href="#">Forgot Password?</a>

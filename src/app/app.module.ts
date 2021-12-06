@@ -6,14 +6,16 @@ import { BarraNavegacionComponent } from './plantilla/barra-navegacion/barra-nav
 import { PiePaginaComponent } from './plantilla/pie-pagina/pie-pagina.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
 
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
-    
+
     AppComponent,
     BarraNavegacionComponent,
     PiePaginaComponent,
@@ -25,8 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    HttpClientModule
-  
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxCaptchaModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

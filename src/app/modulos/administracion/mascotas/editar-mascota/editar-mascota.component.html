@@ -65,7 +65,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <p class="center-align">
-                                    <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn"
+                                    <button [disabled]="!fgValidador.valid" class="waves-effect waves-light btn update-status"
                                         type="submit">Actualizar Estado </button>
                                 </p>
                             </div>
@@ -77,7 +77,7 @@
                     <form [formGroup]="fgValidadorSolicitud" (ngSubmit)="CrearSolicitudAfiliacion()">
                         <div class="form-group">
                             <label for="phone">Comentario</label>
-                            <input formControlName="comentario" type="text" class="form-control" id="txtComentario"
+                            <input formControlName="comentario" type="text" class="form-control comentary-form" id="txtComentario"
                                 required>
                         </div>
                         <button [disabled]="!fgValidador.valid" type="button" type="submit"

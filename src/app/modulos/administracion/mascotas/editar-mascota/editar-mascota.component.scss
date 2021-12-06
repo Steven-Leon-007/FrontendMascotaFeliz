@@ -29,6 +29,15 @@
             color: #fff;
             font-size: 12px;
         }
+
+
+        // Quitar para activar estos campos
+        /*select, .comentary-form, .update-status, .send-commentary{
+            pointer-events: none;
+            touch-action: none;
+        }
+        */
+        
         
         .dates-grid{
             text-align: center;

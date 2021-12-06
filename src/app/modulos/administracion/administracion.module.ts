@@ -16,6 +16,7 @@ import { EliminarPlanComponent } from './planes/eliminar-plan/eliminar-plan.comp
 import { BuscarPlanComponent } from './planes/buscar-plan/buscar-plan.component';
 import { SeguridadRoutingModule } from '../seguridad/seguridad-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 import { CrearMascotaComponent } from './mascotas/crear-mascota/crear-mascota.component';
 import { BuscarMascotaComponent } from './mascotas/buscar-mascota/buscar-mascota.component';
 import { EditarMascotaComponent } from './mascotas/editar-mascota/editar-mascota.component';
@@ -55,7 +56,8 @@ import { BuscarClienteMascotaComponent } from './mascotas/buscar-cliente-mascota
     AdministracionRoutingModule,
     SeguridadRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxCaptchaModule
   ]
 })
 export class AdministracionModule { }

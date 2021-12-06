@@ -13,6 +13,7 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
 					<!--<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Usuarios</a>-->
+					<a *ngIf="!seInicioSesion" class="nav-link" routerLink="#">Servicios</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Servicios</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/mascotas/crear-mascota">Solicitar afiliación</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/mascotas/buscar-mascota">Solicitudes</a>

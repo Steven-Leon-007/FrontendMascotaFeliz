@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+
+
 declare function handleSubmit(): void;
 
 @Component({
@@ -7,8 +10,11 @@ declare function handleSubmit(): void;
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit {
+  public aFormGroup!: FormGroup;
   myScriptElement: HTMLScriptElement;
-  constructor() { 
+
+  constructor(private formBuilder: FormBuilder) { 
+    
     handleSubmit();
     this.myScriptElement = document.createElement('script');
     this.myScriptElement.src = "assets/js/main-inicio.component.js";
@@ -16,6 +22,11 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.aFormGroup = this.formBuilder.group({
+      recaptcha: ['', Validators.required]
+    });
   }
+
+  siteKey: string = "6LfRn34dAAAAAJi5sEb7ewQCAlyM9iNFccif8_5R";
 
 }
