@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ModeloMascota } from 'src/app/modelos/mascota.modelo';
 import { MascotaService } from 'src/app/servicios/mascota.service';
 declare function handleSubmit(): void;
@@ -26,7 +27,8 @@ export class CrearMascotaComponent implements OnInit {
   })
 
   constructor(private fb: FormBuilder,
-    private servicioMascota: MascotaService) {
+    private servicioMascota: MascotaService,
+    private router: Router) {
     handleSubmit();
     this.myScriptElement = document.createElement('script');
     this.myScriptElement.src = "assets/js/main-inicio.component.js";
@@ -61,6 +63,7 @@ export class CrearMascotaComponent implements OnInit {
 
     this.servicioMascota.CrearMascota(m).subscribe((datos: ModeloMascota) => {
       alert("Solicitud enviada correctamente");
+      this.router.navigate(["/inicio"]);
     }, (error: any) => {
       alert("Error al enviar la solicitud")
     })

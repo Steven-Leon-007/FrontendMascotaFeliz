@@ -41,6 +41,17 @@ export class SeguridadService {
     })
   }
 
+  IdentificarAdmin(usuario: string, clave: string): Observable<ModeloIdentificar> {
+    return this.http.post<ModeloIdentificar>(`${this.url}/identificarEmpleado`, {
+      usuario: usuario,
+      clave: clave
+    }, {
+      headers: new HttpHeaders({
+
+      })
+    })
+  }
+
   AlmacenarSesion(datos: ModeloIdentificar){
     datos.estaIdentificado = true;
     let stringDatos = JSON.stringify(datos);
@@ -73,6 +84,18 @@ export class SeguridadService {
     if(datosString){
       let datos = JSON.parse(datosString);
       return datos.tk;
+    }
+    else{
+      return '';
+    }
+  }
+
+  ObtenerRol(){
+    let datosString = localStorage.getItem("datosSesion");
+    if(datosString){
+      let datos = JSON.parse(datosString);
+      let data = datos.datos;
+      return data.rol;
     }
     else{
       return '';

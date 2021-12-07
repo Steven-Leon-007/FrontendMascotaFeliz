@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ModeloPersona } from '../modelos/persona.modelo';
+import { ModeloEmpleado } from '../modelos/empleado.modelo';
 import { SeguridadService } from './seguridad.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonaService {
+export class EmpleadoService {
 
   url = 'http://localhost:3000';
   token: String = '';
@@ -16,16 +16,12 @@ export class PersonaService {
     this.token = seguridadServicio.ObtenerToken();
    }
 
-  CrearPersona(persona: ModeloPersona): Observable<ModeloPersona>{
-    return this.http.post<ModeloPersona>(`${this.url}/clientes`, persona, {
+  CrearEmpleado(empleado: ModeloEmpleado): Observable<ModeloEmpleado>{
+    return this.http.post<ModeloEmpleado>(`${this.url}/empleados`, empleado, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
     })
   }
-
-  ObtenerClientes(): Observable<ModeloPersona[]>{
-    return this.http.get<ModeloPersona[]>(`${this.url}/clientes`);
-  }
-
+  
 }

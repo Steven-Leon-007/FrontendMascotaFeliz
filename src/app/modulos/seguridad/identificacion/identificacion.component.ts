@@ -40,7 +40,13 @@ export class IdentificacionComponent implements OnInit {
       this.router.navigate(["/inicio"])
     }, (error:any) => {
       // KO
-      alert("Datos Inválidos")
+      alert("Datos Cliente Inválidos")
+    })
+    this.servicioSeguridad.IdentificarAdmin(usuario, claveCifrada).subscribe((datos:any) => {
+      this.servicioSeguridad.AlmacenarSesion(datos);
+      this.router.navigate(["/inicio"])
+    }, (error:any) => {
+      alert("Datos Admin Inválidos")
     })
   }
   }

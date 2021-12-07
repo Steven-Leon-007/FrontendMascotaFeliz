@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ModeloPersona } from 'src/app/modelos/persona.modelo';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
@@ -19,11 +20,17 @@ export class CrearPersonaComponent implements OnInit {
   })
 
   constructor(private fb: FormBuilder,
-    private servicioPersona: PersonaService) { }
+    private servicioPersona: PersonaService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.fgValidador = this.fb.group({
-      recaptcha: ['', Validators.required]
+      recaptcha: ['', Validators.required],
+      'correo':["", Validators.required, Validators.email],
+      'nombre':["", Validators.required],
+      'apellidos':["", Validators.required],
+      'direccion':["", Validators.required],
+      'ciudad':["", Validators.required]
     });
   }
 
@@ -46,6 +53,7 @@ export class CrearPersonaComponent implements OnInit {
 
     this.servicioPersona.CrearPersona(p).subscribe((datos: ModeloPersona) => {
       alert("Usuario registrado correctamente");
+      this.router.navigate(["/inicio"]);
     }, (error: any) => {
       alert("Error al registrar el usuario")
     })

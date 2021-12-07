@@ -1,1 +1,74 @@
-<p>buscar-producto works!</p>
+<a routerLink="/administracion/crear-producto">Nuevo Producto</a>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Precio Regular
+            </th>
+            <th>
+                Precio Venta
+            </th>
+            <th>
+                Imagen
+            </th>
+            <th>
+                Ciudad
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoRegistros">
+            <td>
+                {{p.nombre}}
+            </td>
+            <td>
+                {{p.descripcion}}
+            </td>
+            <td>
+                {{p.precioRegular}}
+            </td>
+            <td>
+                {{p.precioVenta}}
+            </td>
+            <td>
+                <img src="{{p.imagen}}" alt="Productos Mascota Feliz">
+            </td>
+            <td>
+                {{p.ciudad}}
+            </td>
+            <td>
+                <a routerLink="/administracion/editar-producto/{{p.id}}">Editar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!--<div class="container">
+    <div class="productos-container">
+        <a routerLink="/administracion/crear-producto">Nuevo Producto</a>
+        <div *ngFor="let p of listadoRegistros">
+            <p>{{p.nombre}}</p>
+
+            <p>{{p.descripcion}}</p>
+
+            <p>{{p.precioRegular}}</p>
+
+            <p>{{p.precioVenta}}</p>
+
+            <img src="{{p.imagen}}">
+
+            <p>{{p.ciudad}}</p>
+            
+            <a routerLink="/administracion/editar-producto/{{p.id}}">Editar</a>
+        </div>
+    </div>
+
+
+</div>-->

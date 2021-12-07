@@ -23,6 +23,11 @@ import { EditarMascotaComponent } from './mascotas/editar-mascota/editar-mascota
 import { EliminarMascotaComponent } from './mascotas/eliminar-mascota/eliminar-mascota.component';
 import { SolicitudAfiliacionComponent } from './solicitud-afiliacion/solicitud-afiliacion.component';
 import { BuscarClienteMascotaComponent } from './mascotas/buscar-cliente-mascota/buscar-cliente-mascota.component';
+import { CrearEmpleadoComponent } from './empleados/crear-empleado/crear-empleado.component';
+import { BuscarEmpleadoComponent } from './empleados/buscar-empleado/buscar-empleado.component';
+import { EditarEmpleadoComponent } from './empleados/editar-empleado/editar-empleado.component';
+import { EliminaEmpleadoComponent } from './empleados/elimina-empleado/elimina-empleado.component';
+
 
 
 @NgModule({
@@ -49,7 +54,11 @@ import { BuscarClienteMascotaComponent } from './mascotas/buscar-cliente-mascota
     EditarMascotaComponent,
     EliminarMascotaComponent,
     SolicitudAfiliacionComponent,
-    BuscarClienteMascotaComponent
+    BuscarClienteMascotaComponent,
+    CrearEmpleadoComponent,
+    BuscarEmpleadoComponent,
+    EditarEmpleadoComponent,
+    EliminaEmpleadoComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModeloMascota } from 'src/app/modelos/mascota.modelo';
 import { ModeloSolicitudAfiliacion } from 'src/app/modelos/solicitudAfiliacion.modelo';
 import { MascotaService } from 'src/app/servicios/mascota.service';
@@ -33,7 +33,8 @@ export class EditarMascotaComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private servicioMascota: MascotaService,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];
@@ -106,6 +107,7 @@ export class EditarMascotaComponent implements OnInit {
 
     this.servicioMascota.EliminarMascota(this.id).subscribe((datos: ModeloMascota) => {
       alert("¡Solicitud borrada con éxito!");
+      this.router.navigate(["/inicio"]);
     }, (error: any) => {
       alert("Error al borrar la solicitud")
     })

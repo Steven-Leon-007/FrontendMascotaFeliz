@@ -1,5 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BuscarEmpleadoComponent } from './empleados/buscar-empleado/buscar-empleado.component';
+import { CrearEmpleadoComponent } from './empleados/crear-empleado/crear-empleado.component';
+import { EditarEmpleadoComponent } from './empleados/editar-empleado/editar-empleado.component';
+import { EliminaEmpleadoComponent } from './empleados/elimina-empleado/elimina-empleado.component';
 import { BuscarClienteMascotaComponent } from './mascotas/buscar-cliente-mascota/buscar-cliente-mascota.component';
 import { BuscarMascotaComponent } from './mascotas/buscar-mascota/buscar-mascota.component';
 import { CrearMascotaComponent } from './mascotas/crear-mascota/crear-mascota.component';
@@ -9,7 +13,10 @@ import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
 import { EditarPersonaComponent } from './personas/editar-persona/editar-persona.component';
 import { EliminarPersonaComponent } from './personas/eliminar-persona/eliminar-persona.component';
+import { BuscarProductoComponent } from './productos/buscar-producto/buscar-producto.component';
 import { SolicitudAfiliacionComponent } from './solicitud-afiliacion/solicitud-afiliacion.component';
+import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
+import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 
 const routes: Routes = [
   {
@@ -52,6 +59,34 @@ const routes: Routes = [
     path: "solicitud-afiliacion",
     component: SolicitudAfiliacionComponent
   },
+  {
+    path: "empleados/crear-empleado",
+    component: CrearEmpleadoComponent
+  },
+  {
+    path: "empleados/editar-empleado",
+    component: EditarEmpleadoComponent
+  },
+  {
+    path: "empleados/buscar-empleado",
+    component: BuscarEmpleadoComponent
+  },
+  {
+    path: "empleados/elimina-empleado",
+    component: EliminaEmpleadoComponent
+  },
+  {
+    path: "listar-productos",
+    component: BuscarProductoComponent
+  },
+  {
+    path: "crear-producto",
+    component: CrearProductoComponent
+  },
+  {
+    path: "editar-producto/:id",
+    component: EditarProductoComponent
+  }
 
 ];
 
