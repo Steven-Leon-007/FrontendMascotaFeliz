@@ -20,6 +20,11 @@ export class ProductoService {
     
   }
 
+  ObtenerRegistrosFiltro(property: string, value: string): Observable<ModeloProducto[]> {
+    return this.http.get<ModeloProducto[]>(`${this.url}/productos?filter[where][${property}]=${value}`);
+    
+  }
+
   
   ObtenerRegistroPorId(id: string): Observable<ModeloProducto> {
     return this.http.get<ModeloProducto>(`${this.url}/productos/${id}`);
@@ -28,7 +33,7 @@ export class ProductoService {
 
 
   CrearProducto(producto: ModeloProducto): Observable<ModeloProducto>{
-    return this.http.post<ModeloProducto>(`${this.url}/productos/${producto.id}`, producto, {
+    return this.http.post<ModeloProducto>(`${this.url}/productos`, producto, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
@@ -36,7 +41,7 @@ export class ProductoService {
   }
   
   ActualizarProducto(producto: ModeloProducto): Observable<ModeloProducto>{
-    return this.http.put<ModeloProducto>(`${this.url}/productos`, producto, {
+    return this.http.put<ModeloProducto>(`${this.url}/productos/${producto.id}`, producto, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })

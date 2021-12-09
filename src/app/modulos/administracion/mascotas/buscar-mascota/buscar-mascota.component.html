@@ -1,6 +1,19 @@
 <div class="table-container">
     <div class="container">
         <h1>Lista Solicitudes</h1>
+        <form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoMascotas()>
+            <div class="topnav">
+            <input formControlName="value" type="text" placeholder="Search..">
+            </div>
+            <select formControlName="property" class="form-select">
+                <option value="ciudad">Ciudad</option>
+                <option value="estado">Estado</option>
+            </select>
+            <div>
+                <button class="submit" type="submit">Buscar</button>
+            </div>
+        </form>
+        
         <div class="table-responsive">
             <table class="table">
                 <thead class="table-head">

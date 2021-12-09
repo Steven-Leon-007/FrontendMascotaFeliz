@@ -32,10 +32,15 @@
                                 <select formControlName="sexo" class="form-select" id="txtSexo" name="txtSexo"
                                     aria-label="Default select example" required>
                                     <option [selected]="true" disabled>Sexo: </option>
-                                    <option value="Canino">Macho</option>
-                                    <option value="Felino">Hembra</option>
+                                    <option value="Macho">Macho</option>
+                                    <option value="Hembra">Hembra</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtCiudad">Ciudad</label>
+                            <input formControlName="ciudad" type="text" class="form-control" id="txtCiudad" name="txtCiudad"
+                                placeholder="Ciudad" required>
                         </div>
                         <div class="form-group">
                             <label for="txtImagen">Imagen</label>

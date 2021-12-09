@@ -26,6 +26,7 @@ export class EditarMascotaComponent implements OnInit {
     'tipo':["", Validators.required],
     'raza':["", Validators.required],
     'sexo':["", Validators.required],
+    'ciudad': ["", Validators.required],
     'fecha':["", Validators.required],
     'imagen':["", Validators.required],
     'fechaSolicitud':["", Validators.required]
@@ -51,6 +52,7 @@ export class EditarMascotaComponent implements OnInit {
       this.fgValidador.controls["tipo"].setValue(datos.tipo);
       this.fgValidador.controls["raza"].setValue(datos.raza);
       this.fgValidador.controls["sexo"].setValue(datos.sexo);
+      this.fgValidador.controls['ciudad'].setValue(datos.ciudad);
       this.fgValidador.controls["fecha"].setValue(datos.fechaNacimiento);
       this.fgValidador.controls["imagen"].setValue(datos.imagen);
       this.fgValidador.controls["fechaSolicitud"].setValue(datos.fechaSolicitud);
@@ -63,6 +65,7 @@ export class EditarMascotaComponent implements OnInit {
     let tipo = this.fgValidador.controls['tipo'].value;
     let raza = this.fgValidador.controls['raza'].value;
     let sexo = this.fgValidador.controls['sexo'].value;
+    let ciudad = this.fgValidador.controls['ciudad'].value;
     let fechaNacimiento = this.fgValidador.controls['fecha'].value;
     let imagen = this.fgValidador.controls['imagen'].value;
     let fechaSolicitud = this.fgValidador.controls['fechaSolicitud'].value;
@@ -72,6 +75,7 @@ export class EditarMascotaComponent implements OnInit {
     m.tipo = tipo;
     m.raza = raza;
     m.sexo = sexo;
+    m.ciudad = ciudad;
     m.fechaNacimiento = fechaNacimiento;
     m.imagen = imagen;
     m.fechaSolicitud = fechaSolicitud;
@@ -91,6 +95,7 @@ export class EditarMascotaComponent implements OnInit {
     let tipo = this.fgValidador.controls['tipo'].value;
     let raza = this.fgValidador.controls['raza'].value;
     let sexo = this.fgValidador.controls['sexo'].value;
+    let ciudad = this.fgValidador.controls['ciudad'].value;
     let fechaNacimiento = this.fgValidador.controls['fecha'].value;
     let imagen = this.fgValidador.controls['imagen'].value;
     let fechaSolicitud = this.fgValidador.controls['fechaSolicitud'].value;
@@ -100,6 +105,7 @@ export class EditarMascotaComponent implements OnInit {
     m.tipo = tipo;
     m.raza = raza;
     m.sexo = sexo;
+    m.ciudad = ciudad;
     m.fechaNacimiento = fechaNacimiento;
     m.imagen = imagen;
     m.fechaSolicitud = fechaSolicitud;

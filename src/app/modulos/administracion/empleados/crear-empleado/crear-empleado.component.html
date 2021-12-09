@@ -1,38 +1,57 @@
-<div class="register_container">
-    <div class="register-form-container">
-      <div class="title_container">
-        <h2>Registro</h2>
-      </div>
-      <div class="row">
+<div class="asesor-register_container">
   
-        <form [formGroup]="fgValidador" (ngSubmit)="RegistrarEmpleado()">
-          <div class="form-group">
-            <label>Correo</label>
-            <input formControlName="correo" type="email" class="form-control" placeholder="Correo"
-              id="txtCorreo" required />
-          </div>
-          <div class="form-group">
-            <label>Nombre</label>
-            <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre"
-              id="txtNombre" required />
-          </div>
-          <div class="form-group">
-            <label>Apellidos</label>
-            <input formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos"
-              id="txtApellidos" required />
-          </div>
-          <div class="form-group">
-            <label>Teléfono</label>
-            <input formControlName="telefono" type="text" class="form-control" placeholder="Telefono"
-              id="txtTelefono" required />
-          </div>
-          <div class="form-group">
-            <label>Ciudad</label>
-            <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad"
-              id="txtCiudad" required />
-          </div>
-          <button class="btn draw-border" type="submit" value="Registrar">Registrar</button>
-        </form>
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+  <div class="register_container">
+
+      <div class="register-form-container">
+        <div class="title_container">
+          <h2>Registrar Asesor</h2>
+        </div>
+        <div class="row">
+
+          <form [formGroup]="fgValidador" (ngSubmit)="RegistrarEmpleado()">
+            <div class="form-group">
+              <label>Correo</label>
+              <input formControlName="correo" type="email" class="form-control" placeholder="Correo" id="txtCorreo"
+                required />
+            </div>
+            <div class="form-group">
+              <label>Nombre</label>
+              <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" id="txtNombre"
+                required />
+            </div>
+            <div class="form-group">
+              <label>Apellidos</label>
+              <input formControlName="apellidos" type="text" class="form-control" placeholder="Apellidos"
+                id="txtApellidos" required />
+            </div>
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input formControlName="telefono" type="text" class="form-control" placeholder="Telefono" id="txtTelefono"
+                required />
+            </div>
+            <div class="form-group">
+              <label>Ciudad</label>
+              <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad" id="txtCiudad"
+                required />
+            </div>
+            <button class="btn draw-border" type="submit" value="Registrar">Registrar</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
+</div>

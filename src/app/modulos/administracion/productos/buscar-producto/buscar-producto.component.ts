@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModeloProducto } from 'src/app/modelos/producto.modelo';
 import { ProductoService } from 'src/app/servicios/producto.service';
 
@@ -11,15 +12,28 @@ export class BuscarProductoComponent implements OnInit {
 
   listadoRegistros: ModeloProducto[] = [];
 
-  constructor(private productoServicio: ProductoService) { }
+  constructor(private productoServicio: ProductoService,
+    private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.ObtenerListadoProductos();
   }
 
+  fgValidador: FormGroup = this.fb.group({
+    'value': ["", Validators.required]
+  })
+
   ObtenerListadoProductos(){
+    let value = this.fgValidador.controls['value'].value;
+    let property = "nombre";
+    if(value == ""){
     this.productoServicio.ObtenerRegistros().subscribe((datos: ModeloProducto[]) => {
       this.listadoRegistros = datos;
     })
+  }else{
+    this.productoServicio.ObtenerRegistrosFiltro(property, value).subscribe((datos: ModeloProducto[]) => {
+      this.listadoRegistros = datos;
+    })
+  }
   }
 }

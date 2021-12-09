@@ -1,4 +1,9 @@
 <a routerLink="/administracion/crear-producto">Nuevo Producto</a>
+<form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoProductos()>
+    <div class="topnav">
+    <input formControlName="value" type="text" placeholder="Search..">
+    </div>
+</form>
 <table>
     <thead>
         <tr>

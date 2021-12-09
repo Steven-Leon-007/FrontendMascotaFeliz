@@ -15,6 +15,9 @@ export class CerrarSesionComponent implements OnInit {
   ngOnInit(): void {
     this.servicioSeguridad.EliminarInformacionSesion();
     this.router.navigate(['/inicio'])
+  .then(() => {
+    window.location.reload();
+  });
   }
 
 }

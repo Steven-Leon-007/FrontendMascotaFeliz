@@ -18,6 +18,10 @@ export class MascotaService {
     this.token = seguridadServicio.ObtenerToken();
   }
 
+  ObtenerMascotasFiltro(property: string, value: string): Observable<ModeloMascota[]>{
+    return this.http.get<ModeloMascota[]>(`${this.url}/mascotas?filter[where][${property}]=${value}`)
+  }
+
   ObtenerMascotas(): Observable<ModeloMascota[]>{
     return this.http.get<ModeloMascota[]>(`${this.url}/mascotas`)
   }

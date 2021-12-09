@@ -17,7 +17,7 @@
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/listar-productos">Servicios</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/mascotas/crear-mascota">Solicitar afiliación</a>
 					<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="/administracion/mascotas/buscar-mascota">Solicitudes</a>
-					<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="#">Crear Servicios</a>
+					<!--<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="#">Crear Servicios</a> -->
 					<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="/administracion/personas/buscar-persona">Ver Clientes</a>
 					<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="/administracion/empleados/crear-empleado">Crear Asesor</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/solicitud-afiliacion">Mis Solicitudes</a>
@@ -30,8 +30,8 @@
 							<span class="material-icons md-48" id="sign-icon">lock_open</span>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<li *ngIf="!seInicioSesion" ><a class="dropdown-item" routerLink="/seguridad/identificar">Sign In</a></li>
-							<li *ngIf="!seInicioSesion" ><a class="dropdown-item" routerLink="/administracion/personas/crear-persona">Sign Up</a></li>
+							<li *ngIf="!seInicioSesion && !seInicioSesionAdmin" ><a class="dropdown-item" routerLink="/seguridad/identificar">Sign In</a></li>
+							<li *ngIf="!seInicioSesion && !seInicioSesionAdmin" ><a class="dropdown-item" routerLink="/administracion/personas/crear-persona">Sign Up</a></li>
 							<li *ngIf="seInicioSesion"><a *ngIf="seInicioSesion" class="nav-link"
 									routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a>
 							</li>

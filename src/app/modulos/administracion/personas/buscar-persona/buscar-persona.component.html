@@ -1,7 +1,9 @@
 <h3>LISTADO CLIENTES</h3>
- <div class="topnav">
-    <input formControlName="filtro" type="text" placeholder="Search..">
-  </div>
+<form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoClientes()>
+    <div class="topnav">
+    <input formControlName="value" type="text" placeholder="Search..">
+    </div>
+</form>
   
 <table class="table responsive">
     <thead>

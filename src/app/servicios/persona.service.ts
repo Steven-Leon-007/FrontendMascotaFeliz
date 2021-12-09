@@ -28,4 +28,8 @@ export class PersonaService {
     return this.http.get<ModeloPersona[]>(`${this.url}/clientes`);
   }
 
+  ObtenerClientesFiltro(property: string, value: string): Observable<ModeloPersona[]>{
+    return this.http.get<ModeloPersona[]>(`${this.url}/clientes?filter[where][${property}]=${value}`);
+  }
+
 }

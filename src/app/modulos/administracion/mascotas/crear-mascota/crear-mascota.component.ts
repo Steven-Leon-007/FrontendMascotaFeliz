@@ -21,6 +21,7 @@ export class CrearMascotaComponent implements OnInit {
     'tipo': ["", Validators.required],
     'raza': ["", Validators.required],
     'sexo': ["", Validators.required],
+    'ciudad':["", Validators.required],
     'fecha': ["", Validators.required],
     'imagen': ["", Validators.required],
     'fechaSolicitud': ["", Validators.required]
@@ -46,15 +47,17 @@ export class CrearMascotaComponent implements OnInit {
     let tipo = this.fgValidador.controls['tipo'].value;
     let raza = this.fgValidador.controls['raza'].value;
     let sexo = this.fgValidador.controls['sexo'].value;
+    let ciudad = this.fgValidador.controls['ciudad'].value;
     let fechaNacimiento = this.fgValidador.controls['fecha'].value;
     let imagen = this.fgValidador.controls['imagen'].value;
     let fechaSolicitud = this.fgValidador.controls['fechaSolicitud'].value;
     let m = new ModeloMascota();
     m.nombre = nombre;
-    m.estado = "pendiente";
+    m.estado = "Pendiente";
     m.tipo = tipo;
     m.raza = raza;
     m.sexo = sexo;
+    m.ciudad = ciudad;
     m.fechaNacimiento = fechaNacimiento;
     m.imagen = imagen;
     m.fechaSolicitud = fechaSolicitud;

@@ -1,43 +1,48 @@
-body{
+.container-body {
     background: radial-gradient(#271f27, rgb(10, 10, 10));
 }
 
-main{
-    margin: auto;
-    width: 60%;
-    position: relative;
+.error-container {
     display: flex;
+    flex-direction: row;
+    place-items: center;
+    padding: 4rem 0rem;
 
+    .error-container div:nth-child(1) {
+        order: 2;
+    }
 
+    .error-container div:nth-child(2) {
+        order: 1;
+    }
 
+    img {
+        width: 100%;
+    }
 
-    .error-container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        place-items: center;
+    p {
+        text-align: center;
+        font-size: 2.5em;
+    }
 
-
-        img{
-            width: 140%;
-        }
-
-        p{
-            text-align: center;
-            font-size: 2.5em;
-        }
-
-        a{
-            border: 1px solid rgb(58, 52, 52);
-            padding: 1.5rem;
-            border-radius: 1rem;
-        }
-        
+    a {
+        border: 1px solid rgb(58, 52, 52);
+        padding: 1.5rem;
+        border-radius: 1rem;
     }
 }
 
-.link-return:hover{
+.link-return:hover {
     color: #fff;
     background-color: #442f44;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 868px) {
+    .error-container {
+        flex-direction: column;
+        padding-bottom: 8rem;
+    }
+    
 }
