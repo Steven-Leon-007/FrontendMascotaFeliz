@@ -1,6 +1,6 @@
 <div class="productos-container">
     
-    <a routerLink="/administracion/planes/crear-plan" class="new-product" *ngIf="!seInicioSesion">Nuevo Plan</a>
+    <a routerLink="/administracion/planes/crear-plan" class="new-product" *ngIf="!seInicioSesion && noSeInicioSesion">Nuevo Plan</a>
 
     <div class="container">
         <div class="row">
@@ -19,7 +19,7 @@
 
                         <p *ngIf="seInicioSesion">Precio: <br>$ {{p.precio}}</p>
 
-                        <a routerLink="/administracion/planes/editar-plan/{{p.id}}" class="edit-button">Editar Plan</a>
+                        <a *ngIf="!seInicioSesion && noSeInicioSesion" routerLink="/administracion/planes/editar-plan/{{p.id}}" class="edit-button">Editar Plan</a>
 
                         <a href="#" class="buy-button">Comprar</a>
                     </div>

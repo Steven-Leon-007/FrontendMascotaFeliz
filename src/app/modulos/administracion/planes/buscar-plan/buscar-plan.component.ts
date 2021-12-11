@@ -19,10 +19,10 @@ export class BuscarPlanComponent implements OnInit {
     private seguridadServicio: SeguridadService) { }
 
   ngOnInit(): void {
-    if(this.seguridadServicio.ObtenerRol()=="1"){
+    alert(this.seguridadServicio.ObtenerRol())
+    if(this.seguridadServicio.ObtenerRol()=="1" || this.seguridadServicio.ObtenerRol()==""){
       this.seInicioSesion = true;
-    }
-    if(this.seguridadServicio.ObtenerRol()==null){
+    }else{
       this.noSeInicioSesion = true;
     }
     this.ObtenerListadoPlanes();
