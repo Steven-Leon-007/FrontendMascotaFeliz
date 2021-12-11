@@ -1,0 +1,56 @@
+.create-plan-container {
+    background-image: linear-gradient(to right top, #225560, #1f445b, #29324f, #321f3a, #310d20);
+    padding: 8rem 5rem;
+ 
+    .container {
+        padding: 4rem;
+        background: #6647847a;
+        border: 1px solid #ccc;
+        border-radius: 1rem;
+
+        label {
+            font-size: 12px;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        input{
+                color: #fff;
+                background: rgba(0, 0, 0, .5);
+                padding: .5rem;
+                margin-bottom: 1rem;
+                font-size: 14px;
+        }
+
+        button{
+            background: #282260;
+            width: 100%;
+            padding: 1rem 0;
+            color: #fff;
+            margin: 3rem 0 1rem;
+            font-size: 14px;
+        }
+
+        a{
+            
+            background: #782112;
+            width: 100%;
+            padding: 1rem 0;
+            color: #fff;
+            margin: 3rem 0 1rem;
+            font-size: 14px;
+        }
+    }
+}
+
+button:hover{
+    background: #40369e !important;
+    border: 1px solid #fff !important;
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover{
+    background: #9e2712 !important;
+    border: 1px solid #fff !important;
+    transition: all 0.5s ease-in-out;
+}

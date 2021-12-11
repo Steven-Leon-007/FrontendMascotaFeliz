@@ -13,6 +13,7 @@ export class BuscarPlanComponent implements OnInit {
 
   listadoPlanes: ModeloPlan[] = [];
   seInicioSesion: boolean = false;
+  noSeInicioSesion: boolean = false;
 
   constructor(private planServicio: PlanService,
     private seguridadServicio: SeguridadService) { }
@@ -20,6 +21,9 @@ export class BuscarPlanComponent implements OnInit {
   ngOnInit(): void {
     if(this.seguridadServicio.ObtenerRol()=="1"){
       this.seInicioSesion = true;
+    }
+    if(this.seguridadServicio.ObtenerRol()==null){
+      this.noSeInicioSesion = true;
     }
     this.ObtenerListadoPlanes();
   }

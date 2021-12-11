@@ -63,7 +63,7 @@
             font-size: 16px;
         }
 
-        a {
+        a:not(.product-regular){
             width: 80%;
             display: block;
             padding: 1rem;
@@ -75,10 +75,11 @@
             font-weight: bold;
             color: #0f0f0f;
         }
+
     }
 
     .card-information {
-        background: #17121980;
+        background: #0e0d0d;
 
         .edit-button {
             background: #225560b0;

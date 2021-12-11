@@ -1,35 +1,41 @@
-<div class="container">
-    <div class="create-product-container">
+<div class="create-product-container">
+    <div class="container">
+
         <div class="row">
+            <h4>Crear Producto</h4>
             <form [formGroup]="fgValidate" (ngSubmit)="GuardarProducto()" action="">
                 <div class="form-group">
                     <label for="nombre">Nombre del producto</label>
-                    <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre" id="txtnombre" required>
+                    <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre"
+                        id="txtnombre" required>
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">descripción del producto</label>
-                    <input formControlName="descripcion" type="text" name="descripcion" class="form-control" placeholder="Descripción"
-                        id="txtdescripcion" required>
+                    <label for="descripcion">Descripción del producto</label>
+                    <input formControlName="descripcion" type="text" name="descripcion" class="form-control"
+                        placeholder="Descripción" id="txtdescripcion" required>
                 </div>
                 <div class="form-group">
                     <label for="precioRegular">Precio regular del producto</label>
-                    <input formControlName="precioRegular" type="number" name="precioRegular" class="form-control" placeholder="Precio Regular ($COP)"
-                        id="txtprecioRegular" required>
+                    <input formControlName="precioRegular" type="number" name="precioRegular" class="form-control"
+                        placeholder="Precio Regular ($COP)" id="txtprecioRegular" required>
                 </div>
                 <div class="form-group">
                     <label for="precioVenta">Precio de venta del producto</label>
-                    <input formControlName="precioVenta" type="number" name="precioVenta" class="form-control" placeholder="Precio Venta ($COP)"
-                        id="txtprecioVenta" required>
+                    <input formControlName="precioVenta" type="number" name="precioVenta" class="form-control"
+                        placeholder="Precio Venta ($COP)" id="txtprecioVenta" required>
                 </div>
                 <div class="form-group">
-                    <label for="ciudad">Ciudad donde se oferta el producto</label>
-                    <input formControlName="ciudad" type="text" name="ciudad" class="form-control" placeholder="Ciudad" id="txtCiudad" required>
+                    <label for="ciudad">Ciudades donde se oferta el producto</label>
+                    <input formControlName="ciudad" type="text" name="ciudad" class="form-control" placeholder="Ciudad"
+                        id="txtCiudad" required>
                 </div>
                 <div class="form-group">
                     <label for="imagen">Imagen del producto</label>
-                    <input formControlName="imagen" type="text" name="imagen" class="form-control" placeholder="Imagen (URL)" id="txtImagen" required>
+                    <input formControlName="imagen" type="text" name="imagen" class="form-control"
+                        placeholder="Imagen (URL)" id="txtImagen" required>
                 </div>
-                <button [disabled]="!fgValidate.valid" class="btn draw-border" type="submit" value="Registrar">Registrar</button>
+                <button [disabled]="!fgValidate.valid" class="btn draw-border" type="submit"
+                    value="Registrar">Crear</button>
             </form>
         </div>
     </div>

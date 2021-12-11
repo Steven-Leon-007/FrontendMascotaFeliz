@@ -1,0 +1,45 @@
+.create-product-container{
+    background-image: url(../../../../../assets/img/background-products.jpg);
+    background-size: cover;
+    padding: 5rem;
+
+    .container{
+        background: #d3b1b146;
+        width: 80%;
+        padding: 3rem;
+        color: #fff;
+        border: 1px solid #323232;
+        border-radius: 1rem;
+    }
+
+    label{
+        font-size: 12px;
+        margin: .8rem 0;
+    }
+
+    input{
+        color: #fff;
+        background: rgba(0, 0, 0, .5);
+        padding: .5rem;
+        margin-bottom: 1rem;
+        font-size: 14px;
+    }
+
+    button{
+        background: rgba(18, 1, 54, 0.7);
+        padding: .8rem 9rem;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 2rem;
+    }
+
+    h4{
+        margin-bottom: 1rem;
+    }
+}
+
+button:hover{
+    background-color: rgb(18, 1, 54) !important;
+    border: 1px solid #fff !important;
+    transition: all 0.5s ease-in-out;
+}

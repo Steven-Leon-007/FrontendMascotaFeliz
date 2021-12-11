@@ -13,6 +13,7 @@ export class BuscarProductoComponent implements OnInit {
 
   listadoRegistros: ModeloProducto[] = [];
   seInicioSesion: boolean = false;
+  noSeInicioSesion: boolean = false;
 
   constructor(private productoServicio: ProductoService,
     private fb: FormBuilder,
@@ -21,6 +22,9 @@ export class BuscarProductoComponent implements OnInit {
   ngOnInit(): void {
     if(this.seguridadServicio.ObtenerRol()=="1"){
       this.seInicioSesion = true;
+    }
+    if(this.seguridadServicio.ObtenerRol()==null){
+      this.noSeInicioSesion = true;
     }
     this.ObtenerListadoProductos();
   }

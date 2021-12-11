@@ -1,0 +1,49 @@
+.create-plan-container{
+    background-image: url(../../../../../assets/img/background-plans.jpg);
+    background-size: cover;
+    box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.6);
+    padding: 5rem;
+    .container{
+        background: #333232ce;
+        width: 80%;
+        padding: 4rem;
+        color: #fff;
+        border: 1px solid #746f6f;
+        border-radius: 1rem;
+    }
+
+    label{
+        font-size: 12px;
+        margin: .8rem 0;
+    }
+
+    input, textarea{
+        color: #fff;
+        background: rgba(0, 0, 0, .5);
+        padding: .5rem;
+        margin-bottom: 1rem;
+        font-size: 14px;
+    }
+
+    button{
+        background: rgba(54, 44, 1, 0.8);
+        padding: .8rem 9rem;
+        color: #fff;
+        font-size: 14px;
+        margin-top: 2rem;
+    }
+
+    h4{
+        margin-bottom: 1rem;
+    }
+}
+
+
+textarea::placeholder{
+    font-size: 16px;
+}
+
+button:hover{
+    background: rgba(54, 44, 1, 1) !important;
+    border: 1px solid #ccc !important;
+}

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
 
-            <a routerLink="/administracion/crear-producto" class="new-product">Nuevo Producto</a>
+            <a *ngIf="!seInicioSesion && noSeInicioSesion" routerLink="/administracion/crear-producto" class="new-product">Nuevo Producto</a>
             <form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoProductos()>
                 <div class="topnav">
                     <input formControlName="value" type="text" placeholder="Buscar.." class="form-control">
@@ -23,13 +23,13 @@
 
                         <p class="product-ciudad">Ciudades donde se oferta el producto: <br>{{p.ciudad}}</p>
 
-                        <p>Precio Regular: <br>$ {{p.precioRegular}}</p>
+                        <p *ngIf="!seInicioSesion && noSeInicioSesion">Precio Regular: <br>$ {{p.precioRegular}}</p>
 
                         <p>Precio: <br>$ {{p.precioVenta}}</p>
 
 
 
-                        <a routerLink="/administracion/editar-producto/{{p.id}}" class="edit-button">Editar</a>
+                        <a *ngIf="!seInicioSesion && noSeInicioSesion" routerLink="/administracion/editar-producto/{{p.id}}" class="edit-button">Editar</a>
 
                         <a href="#" class="buy-button">Comprar</a>
                     </div>

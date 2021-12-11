@@ -1,16 +1,17 @@
-<div class="container">
-    <div class="create-product-container">
+<div class="create-plan-container">
+    <div class="container">
         <div class="row">
             <form [formGroup]="fgValidador" (ngSubmit)="EditarPlan()" action="">
                 <input type="hidden" formControlName="id">
                 <div class="form-group">
                     <label for="nombre">Nombre del plan</label>
-                    <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre" id="txtnombre" required>
+                    <input formControlName="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre"
+                        id="txtnombre" required>
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripción del plan</label>
-                    <input formControlName="descripcion" type="text" name="descripcion" class="form-control" placeholder="Descripción"
-                        id="txtdescripcion" required>
+                    <input formControlName="descripcion" type="text" name="descripcion" class="form-control"
+                        placeholder="Descripción" id="txtdescripcion" required>
                 </div>
                 <div class="form-group">
                     <label for="ciudad">Ciudad en la que el plan está disponible</label>
@@ -19,15 +20,18 @@
                 </div>
                 <div class="form-group">
                     <label for="precio">Precio</label>
-                    <input formControlName="precio" type="number" name="precio" class="form-control" placeholder="Precio ($COP)"
-                        id="txtprecio" required>
+                    <input formControlName="precio" type="number" name="precio" class="form-control"
+                        placeholder="Precio ($COP)" id="txtprecio" required>
                 </div>
-                <button [disabled]="!fgValidador.valid" class="btn draw-border" type="submit">Registrar</button>
-                <div class="col-lg-6">
-                    <a class="btn delete-button" (click)="delete()">Borrar</a>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button [disabled]="!fgValidador.valid" class="btn draw-border" type="submit">Guardar</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="btn delete-button" (click)="delete()">Borrar</a>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
