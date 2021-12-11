@@ -10,6 +10,7 @@
         text-align: center;
         border-radius: 0.5rem;
         width: 20%;
+        margin: 3rem;
     }
 
     .form-control {
@@ -50,8 +51,9 @@
         }
 
         .plan-description{
-            text-align: center;
-            font-size: 13px;
+            text-align: justify;
+            font-size: 14px;
+            
         }
 
         a{
