@@ -1,19 +1,28 @@
 <div class="table-container">
     <div class="container">
         <h1>Lista Solicitudes</h1>
+
         <form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoMascotas()>
-            <div class="topnav">
-            <input formControlName="value" type="text" placeholder="Search..">
+            <div class="filter-container">
+                <div class="select-container">
+                    <label for="">Filtrar por</label>
+                    <select formControlName="property" class="form-select">
+                        <option value="" selected disabled hidden>Selecciona</option>
+                        <option value="ciudad">Ciudad</option>
+                        <option value="estado">Estado</option>
+                    </select>
+
+                </div>
+                <div class="search-container">
+                    <label for="">Buscar</label>
+                    <input formControlName="value" type="text" placeholder="Buscar..." class="form-control">
+                </div>
             </div>
-            <select formControlName="property" class="form-select">
-                <option value="ciudad">Ciudad</option>
-                <option value="estado">Estado</option>
-            </select>
-            <div>
-                <button class="submit" type="submit">Buscar</button>
+            <div class="button-container">
+                <button class="search-button" type="submit">Filtrar</button>
             </div>
         </form>
-        
+
         <div class="table-responsive">
             <table class="table">
                 <thead class="table-head">
@@ -39,7 +48,8 @@
 
                     <tr *ngFor="let m of listadoMascotas">
                         <td>
-                            <a routerLink="/administracion/mascotas/buscar-cliente-mascota/{{m.id}}" type="btn">Detalles</a>
+                            <a routerLink="/administracion/mascotas/buscar-cliente-mascota/{{m.id}}"
+                                type="btn">Detalles</a>
                         </td>
                         <td>
                             {{m.fechaSolicitud}}

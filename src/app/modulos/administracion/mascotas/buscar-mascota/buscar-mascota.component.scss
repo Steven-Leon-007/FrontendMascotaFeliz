@@ -1,55 +1,123 @@
-.table-container{
+.table-container {
     padding: 2rem 0;
     background-image: url(../../../../../assets/img/dark-minimal-background.jpg);
     background-size: cover;
-    
-.container{
-    background: rgba(0, 0, 0, 0.6);
-    margin: 5rem auto;
-    border: 1px solid #aca9a9;
-    border-radius: 1rem;
 
-    h1{
-        padding: 3rem 6rem;
-    }
-
-    table{
-
-        margin: auto;
+    .filter-container {
+        display: flex;
+        flex-direction: row;
         width: 90%;
-        color: #fff;
-        td{
-            text-align: center;
-            font-size: 2rem;
-            vertical-align: middle;
+        margin: 2rem auto;
+        .select-container {
+            flex: 2;
+            margin: 0 1rem;
         }
 
-        img{
-            width: 60%;
-            margin: 2rem;
+        .search-container {
+            flex: 2;
+            margin: 0 1rem;
+        }
+
+        select,
+        input {
+            padding: 0.5rem;
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
             border: 1px solid #323232;
-            border-radius: .7rem;
+            
         }
 
-        th{
-            text-align: center;
-            font-size: 1.5rem;
+        label{
+            color: #fff;
+            font-size: 14px;
+            padding: 0.5rem;
+        }
+    }
+
+    .button-container {
+        width: 88%;
+        margin: 1rem auto 4rem;
+
+        .search-button {
+            width: 100%;
+            padding: .8rem;
+            border: 1px solid #323232;
+            border-radius: 0.3rem;
+            font-size: 14px;
+            color: #ccc;
+            background: #310d20b2;
+        }
+    }
+
+    .container {
+        background: rgba(0, 0, 0, 0.6);
+        margin: 5rem auto;
+        border: 1px solid #aca9a9;
+        border-radius: 1rem;
+
+        h1 {
+            padding: 3rem 6rem 2rem;
         }
 
-        .picture-table{
-            width: 40%;
-        }
+        table {
+            margin: auto;
+            width: 90%;
+            color: #fff;
+            td {
+                text-align: center;
+                font-size: 2rem;
+                vertical-align: middle;
+            }
 
+            img {
+                width: 60%;
+                margin: 2rem;
+                border: 1px solid #323232;
+                border-radius: 0.7rem;
+            }
+
+            th {
+                text-align: center;
+                font-size: 1.5rem;
+            }
+
+            .picture-table {
+                width: 40%;
+            }
+        }
     }
 }
 
+table a:hover {
+    color: #f0803c;
 }
 
-table a:hover{
-    color: #F0803C;
-}
-
-table img:hover{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+table img:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     transition: all 0.2s ease-in;
+}
+
+.search-button:hover {
+    background-color: #310d20 !important;
+    color: #fff !important;
+    border-color: #afadad !important;
+    border-radius: .7rem !important;
+    transition: all 0.4s ease !important;
+    
+}
+
+@media screen and (max-width: 768px){
+    .filter-container{
+        flex-direction: column !important; 
+
+        .select-container{
+            margin-bottom: 2rem !important;
+        }
+    }
+
+    .button-container{
+        width: 86% !important;
+    }
 }

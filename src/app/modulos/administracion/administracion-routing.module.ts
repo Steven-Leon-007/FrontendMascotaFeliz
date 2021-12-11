@@ -17,6 +17,10 @@ import { BuscarProductoComponent } from './productos/buscar-producto/buscar-prod
 import { SolicitudAfiliacionComponent } from './solicitud-afiliacion/solicitud-afiliacion.component';
 import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
+import { BuscarPlanComponent } from './planes/buscar-plan/buscar-plan.component';
+import { EliminarPlanComponent } from './planes/eliminar-plan/eliminar-plan.component';
+import { EditarPlanComponent } from './planes/editar-plan/editar-plan.component';
+import { CrearPlanComponent } from './planes/crear-plan/crear-plan.component';
 
 const routes: Routes = [
   {
@@ -86,7 +90,23 @@ const routes: Routes = [
   {
     path: "editar-producto/:id",
     component: EditarProductoComponent
-  }
+  },
+  {
+    path: "planes/crear-plan",
+    component: CrearPlanComponent
+  },
+  {
+    path: "planes/editar-plan/:id",
+    component: EditarPlanComponent
+  },
+  {
+    path: "planes/buscar-plan",
+    component: BuscarPlanComponent
+  },
+  {
+    path: "planes/eliminar-plan",
+    component: EliminarPlanComponent
+  },
 
 ];
 

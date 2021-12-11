@@ -13,13 +13,14 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
 					<!--<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Usuarios</a>-->
-					<a *ngIf="!seInicioSesion" class="nav-link" routerLink="/administracion/listar-productos">Servicios</a>
-					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/listar-productos">Servicios</a>
+					<a *ngIf="!seInicioSesion && !seInicioSesionAdmin && !seInicioSesionAdministrador" class="nav-link" routerLink="/administracion/listar-productos">Servicios</a>
+					<a *ngIf="seInicioSesion || seInicioSesionAdmin || seInicioSesionAdministrador" class="nav-link" routerLink="/administracion/listar-productos">Servicios</a>
+					<a *ngIf="seInicioSesion || seInicioSesionAdmin || seInicioSesionAdministrador" class="nav-link" routerLink="/administracion/planes/buscar-plan">Planes</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/mascotas/crear-mascota">Solicitar afiliación</a>
-					<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="/administracion/mascotas/buscar-mascota">Solicitudes</a>
+					<a *ngIf="seInicioSesionAdmin || seInicioSesionAdministrador" class="nav-link" routerLink="/administracion/mascotas/buscar-mascota">Solicitudes</a>
 					<!--<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="#">Crear Servicios</a> -->
-					<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="/administracion/personas/buscar-persona">Ver Clientes</a>
-					<a *ngIf="seInicioSesionAdmin" class="nav-link" routerLink="/administracion/empleados/crear-empleado">Crear Asesor</a>
+					<a *ngIf="seInicioSesionAdmin || seInicioSesionAdministrador" class="nav-link" routerLink="/administracion/personas/buscar-persona">Ver Clientes</a>
+					<a *ngIf="seInicioSesionAdministrador" class="nav-link" routerLink="/administracion/empleados/crear-empleado">Crear Asesor</a>
 					<a *ngIf="seInicioSesion" class="nav-link" routerLink="/administracion/solicitud-afiliacion">Mis Solicitudes</a>
 					<!--<a *ngIf="seInicioSesion" class="nav-link" routerLink="#">Informes</a>-->
 
@@ -30,19 +31,15 @@
 							<span class="material-icons md-48" id="sign-icon">lock_open</span>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<li *ngIf="!seInicioSesion && !seInicioSesionAdmin" ><a class="dropdown-item" routerLink="/seguridad/identificar">Sign In</a></li>
-							<li *ngIf="!seInicioSesion && !seInicioSesionAdmin" ><a class="dropdown-item" routerLink="/administracion/personas/crear-persona">Sign Up</a></li>
-							<li *ngIf="seInicioSesion"><a *ngIf="seInicioSesion" class="nav-link"
+							<li *ngIf="!seInicioSesion && !seInicioSesionAdmin && !seInicioSesionAdministrador" ><a class="dropdown-item" routerLink="/seguridad/identificar">Sign In</a></li>
+							<li *ngIf="!seInicioSesion && !seInicioSesionAdmin && !seInicioSesionAdministrador" ><a class="dropdown-item" routerLink="/administracion/personas/crear-persona">Sign Up</a></li>
+							<li *ngIf="seInicioSesion || seInicioSesionAdministrador || seInicioSesionAdmin"><a *ngIf="seInicioSesion || seInicioSesionAdministrador || seInicioSesionAdmin" class="nav-link"
 									routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a>
-							</li>
-							
-							<li *ngIf="seInicioSesionAdmin"><a *ngIf="seInicioSesionAdmin" class="nav-link"
-								routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a>
 							</li>
 
 						</ul>
 					</div>
-					<a class="nav-link" id="sign-responsive" routerLink="/seguridad/cerrarSesion">Sign In / Sign Up</a>
+					<a class="nav-link" id="sign-responsive" routerLink="/seguridad/identificar">Sign In / Sign Up</a>
 
 				</div>
 			</div>

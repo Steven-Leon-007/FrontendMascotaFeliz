@@ -28,8 +28,6 @@ export class BuscarMascotaComponent implements OnInit {
   ObtenerListadoMascotas(){
     let value = this.fgValidador.controls['value'].value;
     let property = this.fgValidador.controls['property'].value;
-    alert(property);
-    alert(value);
     if(value == "" && property == ""){
       this.mascotaServicio.ObtenerMascotas().subscribe((datos: ModeloMascota[]) => {
         this.listadoMascotas = datos;

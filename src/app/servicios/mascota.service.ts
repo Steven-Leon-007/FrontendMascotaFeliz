@@ -61,10 +61,6 @@ export class MascotaService {
   })
   }
 
-  ObtenerSolicitudes(): Observable<ModeloSolicitudAfiliacion[]>{
-    return this.http.get<ModeloSolicitudAfiliacion[]>(`${this.url}/solicitud-afiliacions`)
-  }
-
   ObtenerClienteMascotaPorId(id:string): Observable<ModeloPersona>{
     return this.http.get<ModeloPersona>(`${this.url}/mascotas/${id}/cliente`);
   }

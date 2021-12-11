@@ -1,10 +1,47 @@
-<a routerLink="/administracion/crear-producto">Nuevo Producto</a>
-<form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoProductos()>
-    <div class="topnav">
-    <input formControlName="value" type="text" placeholder="Search..">
+<div class="productos-container">
+
+    <div class="container">
+        <div class="row">
+
+            <a routerLink="/administracion/crear-producto" class="new-product">Nuevo Producto</a>
+            <form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoProductos()>
+                <div class="topnav">
+                    <input formControlName="value" type="text" placeholder="Buscar.." class="form-control">
+                </div>
+            </form>
+
+            <div *ngFor="let p of listadoRegistros" class="col-sm-4">
+
+                <div class="card card-block">
+
+                    <img src="{{p.imagen}}">
+
+                    <div class="card-block card-information">
+                        <h4>{{p.nombre}}</h4>
+
+                        <p class="product-description">{{p.descripcion}}</p>
+
+                        <p class="product-ciudad">Ciudades donde se oferta el producto: <br>{{p.ciudad}}</p>
+
+                        <p>Precio Regular: <br>$ {{p.precioRegular}}</p>
+
+                        <p>Precio: <br>$ {{p.precioVenta}}</p>
+
+
+
+                        <a routerLink="/administracion/editar-producto/{{p.id}}" class="edit-button">Editar</a>
+
+                        <a href="#" class="buy-button">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</form>
-<table>
+
+
+</div>
+
+<!--<table>
     <thead>
         <tr>
             <th>
@@ -54,26 +91,4 @@
     </tbody>
 </table>
 
-
-<!--<div class="container">
-    <div class="productos-container">
-        <a routerLink="/administracion/crear-producto">Nuevo Producto</a>
-        <div *ngFor="let p of listadoRegistros">
-            <p>{{p.nombre}}</p>
-
-            <p>{{p.descripcion}}</p>
-
-            <p>{{p.precioRegular}}</p>
-
-            <p>{{p.precioVenta}}</p>
-
-            <img src="{{p.imagen}}">
-
-            <p>{{p.ciudad}}</p>
-            
-            <a routerLink="/administracion/editar-producto/{{p.id}}">Editar</a>
-        </div>
-    </div>
-
-
-</div>-->
+-->

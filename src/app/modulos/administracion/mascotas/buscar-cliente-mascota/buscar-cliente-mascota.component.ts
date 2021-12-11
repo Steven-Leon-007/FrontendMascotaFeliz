@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ModeloPersona } from 'src/app/modelos/persona.modelo';
 import { MascotaService } from 'src/app/servicios/mascota.service';
-import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-buscar-cliente-mascota',
@@ -20,7 +19,6 @@ export class BuscarClienteMascotaComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params["id"];
-    alert(this.id = this.route.snapshot.params["id"])
     this.ObtenerCliente();
   }
 

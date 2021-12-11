@@ -1,48 +1,61 @@
-<h3>LISTADO CLIENTES</h3>
-<form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoClientes()>
-    <div class="topnav">
-    <input formControlName="value" type="text" placeholder="Search..">
-    </div>
-</form>
-  
-<table class="table responsive">
-    <thead>
-        <tr>
-        <th>
-            Nombres
-        </th>
-        <th>
-            Apellidos
-        </th>
-        <th>
-            Correo
-        </th>
-        <th>
-            Direccion
-        </th>
-        <th>
-            Ciudad
-        </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let c of listadoCliente">
-            <td>
-                {{c.nombre}}
-            </td>
-            <td>
-                {{c.apellidos}}
-            </td>
-            <td>
-                {{c.email}}
-            </td>
-            <td>
-                {{c.direccion}}
-            </td>
-            <td>
-                {{c.ciudad}}
-            </td>
-        </tr>
+<div class="wrapper">
+    <div class="table-container">
+        <div class="container">
+            <h1>LISTADO CLIENTES</h1>
+            <form [formGroup]="fgValidador" (ngSubmit)=ObtenerListadoClientes()>
+                <div class="topnav">
+                    <div class="filter-container">
+                        <input formControlName="value" type="text" placeholder="Filtrar.." class="form-control">
+                    </div>
+                    <div class="button-container">
+                        <button class="search-button" type="submit">Filtrar</button>
+                    </div>
+                </div>
 
-    </tbody>
-</table>
+            </form>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombres
+                            </th>
+                            <th>
+                                Apellidos
+                            </th>
+                            <th>
+                                Correo
+                            </th>
+                            <th>
+                                Direccion
+                            </th>
+                            <th>
+                                Ciudad
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of listadoCliente">
+                            <td>
+                                {{c.nombre}}
+                            </td>
+                            <td>
+                                {{c.apellidos}}
+                            </td>
+                            <td>
+                                {{c.email}}
+                            </td>
+                            <td>
+                                {{c.direccion}}
+                            </td>
+                            <td>
+                                {{c.ciudad}}
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

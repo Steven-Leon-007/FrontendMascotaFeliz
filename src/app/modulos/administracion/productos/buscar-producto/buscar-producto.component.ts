@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModeloProducto } from 'src/app/modelos/producto.modelo';
 import { ProductoService } from 'src/app/servicios/producto.service';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({
   selector: 'app-buscar-producto',
@@ -11,11 +12,16 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 export class BuscarProductoComponent implements OnInit {
 
   listadoRegistros: ModeloProducto[] = [];
+  seInicioSesion: boolean = false;
 
   constructor(private productoServicio: ProductoService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private seguridadServicio: SeguridadService) { }
 
   ngOnInit(): void {
+    if(this.seguridadServicio.ObtenerRol()=="1"){
+      this.seInicioSesion = true;
+    }
     this.ObtenerListadoProductos();
   }
 

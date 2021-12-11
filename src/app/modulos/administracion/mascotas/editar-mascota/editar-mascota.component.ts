@@ -90,27 +90,7 @@ export class EditarMascotaComponent implements OnInit {
 
  delete(){
   if(confirm("¿Está seguro que desea eliminar la solicitud?")){
-    let nombre = this.fgValidador.controls['nombre'].value;
-    let estado = this.fgValidador.controls['estado'].value;
-    let tipo = this.fgValidador.controls['tipo'].value;
-    let raza = this.fgValidador.controls['raza'].value;
-    let sexo = this.fgValidador.controls['sexo'].value;
-    let ciudad = this.fgValidador.controls['ciudad'].value;
-    let fechaNacimiento = this.fgValidador.controls['fecha'].value;
-    let imagen = this.fgValidador.controls['imagen'].value;
-    let fechaSolicitud = this.fgValidador.controls['fechaSolicitud'].value;
-    let m = new ModeloMascota();
-    m.nombre = nombre;
-    m.estado = estado;
-    m.tipo = tipo;
-    m.raza = raza;
-    m.sexo = sexo;
-    m.ciudad = ciudad;
-    m.fechaNacimiento = fechaNacimiento;
-    m.imagen = imagen;
-    m.fechaSolicitud = fechaSolicitud;
-    m.id = this.id;
-
+    
     this.servicioMascota.EliminarMascota(this.id).subscribe((datos: ModeloMascota) => {
       alert("¡Solicitud borrada con éxito!");
       this.router.navigate(["/inicio"]);

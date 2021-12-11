@@ -10,12 +10,6 @@ import { MascotaService } from 'src/app/servicios/mascota.service';
 })
 export class SolicitudAfiliacionComponent implements OnInit {
 
-  fgValidador: FormGroup = this.fb.group({
-    'petName':["", Validators.required],
-    'estado':["", Validators.required],
-    'comentario':["", Validators.required],
-  })
-
   constructor(private fb: FormBuilder,
     private servicioMascota: MascotaService,) { }
 
@@ -24,12 +18,17 @@ export class SolicitudAfiliacionComponent implements OnInit {
    alert(this.servicioMascota.ObtenerIdCliente())
   }
 
+  fgValidador: FormGroup = this.fb.group({
+    'petName':["", Validators.required],
+    'estado':["", Validators.required],
+    'comentario':["", Validators.required],
+  })
 
   ObtenerSolicitud(){
     this.servicioMascota.ObtenerSolicitudPorId(this.servicioMascota.ObtenerIdCliente()).subscribe((datos: ModeloSolicitudAfiliacion) => {
       this.fgValidador.controls["petName"].setValue(datos.petName);
       this.fgValidador.controls["estado"].setValue(datos.estado);
       this.fgValidador.controls["comentario"].setValue(datos.comentario);
-    });
+    })
   }
 }

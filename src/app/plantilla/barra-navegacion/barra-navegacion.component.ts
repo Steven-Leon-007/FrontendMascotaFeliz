@@ -12,6 +12,7 @@ export class BarraNavegacionComponent implements OnInit {
 
   seInicioSesion: boolean = false;
   seInicioSesionAdmin: boolean = false;
+  seInicioSesionAdministrador: boolean = false;
 
   subs: Subscription = new Subscription();
 
@@ -24,7 +25,11 @@ export class BarraNavegacionComponent implements OnInit {
       }
       else
       {
+        if(this.seguridadServicio.ObtenerRol()=="3"){
+          this.seInicioSesionAdministrador = datos.estaIdentificado;
+        }else{
         this.seInicioSesionAdmin = datos.estaIdentificado;
+        }
       }
       
     })

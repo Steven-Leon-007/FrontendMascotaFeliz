@@ -72,24 +72,10 @@ export class EditarProductoComponent implements OnInit {
 
   delete(){
     if(confirm("¿Está seguro que desea eliminar el producto?")){
-      let nombre = this.fgValidate.controls['nombre'].value;
-      let descripcion = this.fgValidate.controls['descripcion'].value;
-      let precioRegular = parseInt(this.fgValidate.controls['precioRegular'].value);
-      let precioVenta = parseInt(this.fgValidate.controls['precioVenta'].value);
-      let ciudad = this.fgValidate.controls['ciudad'].value;
-      let imagen = this.fgValidate.controls['imagen'].value;
-      let p = new ModeloProducto();
-      p.nombre = nombre;
-      p.descripcion = descripcion;
-      p.precioRegular = precioRegular;
-      p.precioVenta = precioVenta;
-      p.ciudad = ciudad;
-      p.imagen = imagen;
-      p.id = this.id;
-  
+      
       this.servicioProducto.EliminarProducto(this.id).subscribe((datos: ModeloProducto) => {
         alert("¡Producto borrada con éxito!");
-        this.router.navigate(["/inicio"]);
+        this.router.navigate(["/administracion/productos/listar-productos"]);
       }, (error: any) => {
         alert("Error al borrar el producto")
       })

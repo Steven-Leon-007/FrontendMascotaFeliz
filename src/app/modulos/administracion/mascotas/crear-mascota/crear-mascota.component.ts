@@ -39,7 +39,6 @@ export class CrearMascotaComponent implements OnInit {
 
   ngOnInit(): void {
     this.servicioMascota.ObtenerIdCliente();
-    alert(this.servicioMascota.ObtenerIdCliente())
   }
 
   RegistrarMascota() {
