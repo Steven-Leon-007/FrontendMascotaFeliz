@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Information
+
+- This project was builded with ❤ by InMotion, All rights reserved.
+- Developed for Mision TIC 2022 Web Development project.
+- This repository contains only the frontend and visual part of the application, for the Backend go to [this repository](https://github.com/MariaJoseGa/BackendMascotaFeliz).
+

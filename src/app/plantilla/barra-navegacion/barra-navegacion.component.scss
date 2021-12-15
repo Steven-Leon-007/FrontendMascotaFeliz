@@ -23,6 +23,22 @@ nav{
     flex: 1;
     }
 
+    .cart-icon{
+        font-size: 26px;
+        color: #fff;
+        cursor: pointer;
+
+    }
+
+    .cart-icon-ancla:hover{
+        background: none !important;
+
+        .cart-icon:hover{
+            color: #48a00a !important;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+
     #navbarNavAltMarkup{
         justify-content: flex-end;
         margin-right: 4rem;
